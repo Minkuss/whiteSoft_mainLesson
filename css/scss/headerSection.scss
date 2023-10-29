@@ -1,0 +1,20 @@
+@import "./colors.scss";
+@import "./paddings.scss";
+
+.header__nav {
+  display: flex;
+  height: 68px;
+  justify-content: space-between;
+  @include vertical-padding(16px, 16px);
+  @include horizontal-padding(32px, 32px);
+}
+
+.nav__links {
+  display: flex;
+  gap: 24px;
+  align-self: center;
+  .divider {
+    width: 1px;
+    background: $gray-100;
+  }
+}
