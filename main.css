@@ -1,0 +1,260 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, table, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  cursor: pointer;
+}
+
+footer, header, nav, section, main {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.container {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.links {
+  color: #4B5563;
+  font-weight: 500;
+}
+.links:hover {
+  color: #111827;
+}
+.links:active {
+  color: #1F2937;
+}
+
+.button {
+  color: #F9FAFB;
+  border-radius: 20px;
+  background: #F6A63D;
+  padding: 8px 48px;
+}
+.button:disabled {
+  opacity: 0.4;
+}
+.button:hover {
+  background: #F7B255;
+}
+.button:active {
+  background: #F4900C;
+}
+
+h1 {
+  font-family: "Inter";
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -2%;
+}
+@media (max-width: 768px) {
+  h1 {
+    font-family: "Inter";
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+h2 {
+  font-family: "Inter";
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -2%;
+}
+@media (max-width: 768px) {
+  h2 {
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -2%;
+  }
+}
+
+h3 {
+  font-family: "Inter";
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -2%;
+}
+@media (max-width: 768px) {
+  h3 {
+    font-family: "Inter";
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -2%;
+  }
+}
+
+.subtitle {
+  font-family: "Inter";
+  font-size: 20px;
+  line-height: 28px;
+}
+@media (max-width: 768px) {
+  .subtitle {
+    font-family: "Inter";
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.body1 {
+  font-family: "Inter";
+  font-size: 18px;
+  line-height: 28px;
+}
+@media (max-width: 768px) {
+  .body1 {
+    font-family: "Inter";
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.body2 {
+  font-family: "Inter";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.body3 {
+  font-family: "Inter";
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.header .header__nav {
+  display: flex;
+  height: 68px;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.header .header__nav .nav__links {
+  display: flex;
+  gap: 24px;
+  align-self: center;
+}
+.header .header__nav .nav__links .divider {
+  width: 1px;
+  background: #F3F4F6;
+}
+
+.main .hero .hero__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 96px;
+  padding-bottom: 0px;
+}
+@media (max-width: 1024px) {
+  .main .hero .hero__info {
+    flex-direction: row-reverse;
+  }
+}
+.main .hero .hero__info .info__column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 48px;
+}
+.main .hero .hero__info .info__column .column__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+.main .hero .hero__info .info__column .column__content .content__h1 {
+  font-weight: 700;
+}
+.main .hero .hero__info .info__column .column__content .content__p {
+  max-width: 768px;
+  color: #4B5563;
+}
+@media (max-width: 1024px) {
+  .main .hero .hero__info .info__column .column__content .content__p {
+    display: none;
+  }
+}
+.main .hero .hero__info .info__column .column__btn {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+@media (max-width: 1024px) {
+  .main .hero .hero__info .info__column .column__btn {
+    align-self: center;
+  }
+}
+.main .hero .hero__info .info__img {
+  width: 320px;
+  height: 360px;
+}
+.main .hero .hero__info .info__bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.main .hero .hero__info .wave1 {
+  z-index: 1;
+}
+.main .hero .hero__info .wave1, .main .hero .hero__info .wave2 {
+  width: 100%;
+}
+.main .hero .hero__info .orange1 {
+  transform: rotate(-50.031deg);
+  left: 219.82px;
+}
+.main .hero .hero__info .orange2 {
+  left: 280.82px;
+}
+
+/*# sourceMappingURL=main.css.map */
