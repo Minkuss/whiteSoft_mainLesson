@@ -2,7 +2,10 @@
 @import "./colors.scss";
 
 .container {
-  @include horizontal-padding(80px, 80px)
+  @include horizontal-padding(80px, 80px);
+  @media (max-width: 1023px) {
+    @include horizontal-padding(64px, 64px);
+  }
 }
 
 .links {

@@ -23,12 +23,13 @@
 
 .main {
   .hero {
+    height: 100vh;
+    @include vertical-padding(96px, 120px);
     .hero__info {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @include vertical-padding(96px, 0px);
-      @media (max-width: 1024px) {
+      @media (max-width: 1023px) {
         flex-direction: row-reverse;
       }
       .info__column { 
@@ -37,6 +38,10 @@
         justify-content: center;
         align-items: flex-end;
         gap: 48px;
+        @media (max-width: 1023px) {
+          gap: 32px;
+          width: 100%;
+        }
         .column__content {
           display: flex;
           flex-direction: column;
@@ -49,7 +54,7 @@
           .content__p {
             max-width: 768px;
             color: $gray-600;
-            @media (max-width: 1024px) {
+            @media (max-width: 1023px) {
               display: none;
             }
           }
@@ -57,8 +62,9 @@
         .column__btn {
           text-transform: uppercase;
           font-weight: 600;
-          @media (max-width: 1024px) {
+          @media (max-width: 1023px) {
             align-self: center;
+            font-weight: 400;
           }
         }
       }
@@ -78,12 +84,71 @@
         width: 100%;
       }
       .orange1 {
-        transform: rotate(-50.031deg);
+        // transform: rotate(-50.031deg);
         left: 219.82px;
       }
       .orange2 {
         left: 280.82px;
       }
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    position: relative;
+    @include vertical-padding(0px, 96px);
+    .skills__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      .text__h1 {
+        color: $gray-600;
+        font-weight: 700;
+      }
+      .text__p {
+        color: $gray-600;
+        font-weight: 400;
+      }
+    }
+    .skills__icons {
+      display: flex;
+      justify-content: space-between;
+      width: 720px;
+      @media (max-width: 768px) {
+        width: 640px;
+      }
+      .icons__container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
+    }
+    .skills__orange {
+      width: 154px;
+      height: 198px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @media (max-width: 1023px) {
+        width: 109.404px;
+        height: 159.789px;
+      }
+      @media (max-width: 768px) {
+        width: 82.133px;
+        height: 159.789px;
+      }
+    }
+  }
+  .experience {
+    background: $gray-50;
+    @include vertical-padding(96px, 96px);
+    .experience__content {
+      @include horizontal-padding(32px, 32px);
     }
   }
 }
