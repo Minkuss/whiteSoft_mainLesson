@@ -1,0 +1,56 @@
+@import "./colors.scss";
+@import "./paddings.scss";
+
+.main {
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    position: relative;
+    @include vertical-padding(0px, 96px);
+    .skills__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      .text__h1 {
+        color: $gray-600;
+        font-weight: 700;
+      }
+      .text__p {
+        color: $gray-600;
+        font-weight: 400;
+      }
+    }
+    .skills__icons {
+      display: flex;
+      justify-content: space-between;
+      width: 720px;
+      @media (max-width: 768px) {
+        width: 640px;
+      }
+      .icons__container {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+      }
+    }
+    .skills__orange {
+      width: 154px;
+      height: 198px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @media (max-width: 1023px) {
+        width: 109.404px;
+        height: 159.789px;
+      }
+      @media (max-width: 768px) {
+        width: 82.133px;
+        height: 159.789px;
+      }
+    }
+  }
+}

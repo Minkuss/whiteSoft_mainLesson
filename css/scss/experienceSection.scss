@@ -1,0 +1,97 @@
+@import "./colors.scss";
+@import "./paddings.scss";
+
+.main {
+  .experience {
+    background: $gray-50;
+    @include vertical-padding(96px, 96px);
+    .experience__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+      @include horizontal-padding(32px, 32px);
+      .content__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        .text__h1 {
+          color: $orange-500;
+          font-weight: 700;
+        }
+        .text__p {
+          color: $gray-600;
+          font-weight: 400;
+        }
+      }
+      .content__cards {
+        display: grid;
+        gap: 32px;
+          .cards__dates {
+            display: grid;
+            background: $gray-default;
+            border-radius: 12px;
+            @include vertical-padding(16px, 16px);
+            grid-template-areas: 
+            "dates1"
+            "dates2"
+            "dates3";
+            align-items: start;
+            .dates__text {
+              @include vertical-padding(16px, 16px);
+              @include horizontal-padding(32px, 32px);
+              .text__button {
+                color: $gray-500;
+              }
+              .text__button--active {
+                color: $gray-950;
+              }
+            }
+          }
+          .cards__experience {
+            background: $gray-default;
+            border-radius: 12px;
+            grid-area: experience;
+            grid-column-start: 2;
+            grid-row-start: 1;
+            @include vertical-padding(32px, 32px);
+            @include horizontal-padding(32px, 32px);
+            display: flex;
+            flex-direction: row;
+            gap: 48px;
+            .experience__img {
+              align-self: flex-start;
+            }
+            .experience__info {
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              .info__prof {
+                color: $gray-900;
+                font-weight: 600;
+              }
+              .info__ul {
+                .ul__li {
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  &::before {
+                    content: "";
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: $orange-500;
+                  }
+                  .li__span {
+                    color: $gray-600;
+                    font-weight: 400;
+                  }
+                }
+              }
+            }
+          }
+      }
+    }
+  }
+}
