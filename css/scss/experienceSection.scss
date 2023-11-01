@@ -3,6 +3,7 @@
 
 .main {
   .experience {
+    overflow: hidden;
     background: $gray-50;
     @include vertical-padding(96px, 96px);
     .experience__content {
@@ -27,17 +28,20 @@
       }
       .content__cards {
         display: grid;
+        grid-template-areas: 
+        "date exp"
+        "date exp"
+        "date exp"
+        ;
         gap: 32px;
           .cards__dates {
-            display: grid;
+            grid-area: date;
             background: $gray-default;
             border-radius: 12px;
             @include vertical-padding(16px, 16px);
-            grid-template-areas: 
-            "dates1"
-            "dates2"
-            "dates3";
-            align-items: start;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             .dates__text {
               @include vertical-padding(16px, 16px);
               @include horizontal-padding(32px, 32px);
@@ -52,14 +56,15 @@
           .cards__experience {
             background: $gray-default;
             border-radius: 12px;
-            grid-area: experience;
-            grid-column-start: 2;
-            grid-row-start: 1;
             @include vertical-padding(32px, 32px);
             @include horizontal-padding(32px, 32px);
             display: flex;
             flex-direction: row;
             gap: 48px;
+            grid-area: exp;
+            transform: translateX(150%);
+            opacity: 0;
+            transition: transform 1s, opacity 0.5s;
             .experience__img {
               align-self: flex-start;
             }
@@ -72,16 +77,21 @@
                 font-weight: 600;
               }
               .info__ul {
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
                 .ul__li {
                   display: flex;
                   align-items: center;
                   gap: 8px;
                   &::before {
                     content: "";
-                    width: 6px;
+                    min-width: 6px;
                     height: 6px;
                     border-radius: 50%;
                     background: $orange-500;
+                    align-self: flex-start;
+                    margin-top: 10px;
                   }
                   .li__span {
                     color: $gray-600;
@@ -90,6 +100,10 @@
                 }
               }
             }
+          }
+          .active {
+            transform: translateX(0);
+            opacity: 1;
           }
       }
     }

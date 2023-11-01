@@ -215,6 +215,7 @@ h3 {
     .main .hero .hero__info .wave1, .main .hero .hero__info .wave2 {
       width: 100%; }
     .main .hero .hero__info .orange1 {
+      transform: rotate(-50.031deg);
       left: 219.82px; }
     .main .hero .hero__info .orange2 {
       left: 280.82px; }
@@ -266,6 +267,7 @@ h3 {
         height: 159.789px; } }
 
 .main .experience {
+  overflow: hidden;
   background: #F9FAFB;
   padding-top: 96px;
   padding-bottom: 96px; }
@@ -289,15 +291,17 @@ h3 {
         font-weight: 400; }
     .main .experience .experience__content .content__cards {
       display: grid;
+      grid-template-areas: "date exp" "date exp" "date exp";
       gap: 32px; }
       .main .experience .experience__content .content__cards .cards__dates {
-        display: grid;
+        grid-area: date;
         background: #FFF;
         border-radius: 12px;
         padding-top: 16px;
         padding-bottom: 16px;
-        grid-template-areas: "dates1" "dates2" "dates3";
-        align-items: start; }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; }
         .main .experience .experience__content .content__cards .cards__dates .dates__text {
           padding-top: 16px;
           padding-bottom: 16px;
@@ -310,16 +314,17 @@ h3 {
       .main .experience .experience__content .content__cards .cards__experience {
         background: #FFF;
         border-radius: 12px;
-        grid-area: experience;
-        grid-column-start: 2;
-        grid-row-start: 1;
         padding-top: 32px;
         padding-bottom: 32px;
         padding-left: 32px;
         padding-right: 32px;
         display: flex;
         flex-direction: row;
-        gap: 48px; }
+        gap: 48px;
+        grid-area: exp;
+        transform: translateX(150%);
+        opacity: 0;
+        transition: transform 1s, opacity 0.5s; }
         .main .experience .experience__content .content__cards .cards__experience .experience__img {
           align-self: flex-start; }
         .main .experience .experience__content .content__cards .cards__experience .experience__info {
@@ -329,18 +334,27 @@ h3 {
           .main .experience .experience__content .content__cards .cards__experience .experience__info .info__prof {
             color: #111827;
             font-weight: 600; }
-          .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__li {
+          .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul {
             display: flex;
-            align-items: center;
-            gap: 8px; }
-            .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__li::before {
-              content: "";
-              width: 6px;
-              height: 6px;
-              border-radius: 50%;
-              background: #F4900C; }
-            .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__li .li__span {
-              color: #4B5563;
-              font-weight: 400; }
+            flex-direction: column;
+            gap: 16px; }
+            .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__li {
+              display: flex;
+              align-items: center;
+              gap: 8px; }
+              .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__li::before {
+                content: "";
+                min-width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: #F4900C;
+                align-self: flex-start;
+                margin-top: 10px; }
+              .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__li .li__span {
+                color: #4B5563;
+                font-weight: 400; }
+      .main .experience .experience__content .content__cards .active {
+        transform: translateX(0);
+        opacity: 1; }
 
 /*# sourceMappingURL=main.css.map */

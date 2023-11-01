@@ -31,6 +31,7 @@
       </nav>
     </header>
     <main class="main">
+      <!-- HERO SECTION----------------------------------------------------------->
       <div class="hero container">
         <div class="hero__info">
           <div class="info__column">
@@ -65,6 +66,8 @@
           />
         </div>
       </div>
+
+      <!-- SKILLS SECTION-------------------------------------------------------------->
       <div class="skills container">
         <div class="skills__text">
           <h1 class="text__h1">Skills</h1>
@@ -96,6 +99,8 @@
         </div>
         <img class="skills__orange" src="./assets/images/orange_skills.png" />
       </div>
+
+      <!-- EXPERIENCE SECTION ------------------------------------------------------------->
       <div class="experience container">
         <div class="experience__content">
           <div class="content__text">
@@ -104,21 +109,32 @@
               Here is a quick summary of Capibarara most recent experiences:
             </p>
           </div>
+
+          <!-- Cards block--------------------------------------------------------------->
           <div class="content__cards">
             <div class="cards__dates shadow__md">
-              <div class="dates__text" style="grid-area: dates1">
-                <button class="text__button--active body2">
+              <div class="dates__text">
+                <button
+                  data-order="1"
+                  class="text__button text__button--active body2"
+                >
                   May 2020 - Present
                 </button>
               </div>
-              <div class="dates__text" style="grid-area: dates2">
-                <button class="text__button body2">Dec 2019 - May 2020</button>
+              <div class="dates__text">
+                <button data-order="2" class="text__button body2">
+                  Dec 2019 - May 2020
+                </button>
               </div>
-              <div class="dates__text" style="grid-area: dates3">
-                <button class="text__button body2">May 2019 - Dec 2019</button>
+              <div class="dates__text">
+                <button data-order="3" class="text__button body2">
+                  May 2019 - Dec 2019
+                </button>
               </div>
             </div>
-            <div class="cards__experience shadow__md">
+
+            <!-- Cards experience------------------------------------------------------>
+            <div class="cards__experience active shadow__md">
               <img
                 class="experience__img"
                 src="./assets/images/ws_logo.svg"
@@ -149,9 +165,97 @@
                 </ul>
               </div>
             </div>
+
+            <div class="cards__experience shadow__md">
+              <img
+                class="experience__img"
+                src="./assets/images/ws_logo.svg"
+                alt="White soft"
+              />
+              <div class="experience__info">
+                <span class="info__prof subtitle"
+                  >Junior Frontend Developer</span
+                >
+                <ul class="info__ul">
+                  <li class="ul__li">
+                    <span class="li__span body2"
+                      >Collaborating with senior developers to enhance skills
+                      and learn new technologies</span
+                    >
+                  </li>
+                  <li class="ul__li">
+                    <span class="li__span body2"
+                      >Mentoring and providing guidance to junior frontend
+                      developers</span
+                    >
+                  </li>
+                  <li class="ul__li">
+                    <span class="li__span body2"
+                      >Optimizing the performance of web applications</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="cards__experience shadow__md">
+              <img
+                class="experience__img"
+                src="./assets/images/ws_logo.svg"
+                alt="White soft"
+              />
+              <div class="experience__info">
+                <span class="info__prof subtitle"
+                  >Senior Frontend Developer</span
+                >
+                <ul class="info__ul">
+                  <li class="ul__li">
+                    <span class="li__span body2"
+                      >Collaborating with senior developers to enhance skills
+                      and learn new technologies</span
+                    >
+                  </li>
+                  <li class="ul__li">
+                    <span class="li__span body2"
+                      >Mentoring and providing guidance to junior frontend
+                      developers</span
+                    >
+                  </li>
+                  <li class="ul__li">
+                    <span class="li__span body2"
+                      >Optimizing the performance of web applications</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </main>
   </body>
+  <script>
+    const buttons = document.querySelectorAll(".text__button");
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const clickedButton = event.currentTarget;
+        const order = clickedButton.getAttribute("data-order");
+        const experienceCards = document.querySelectorAll(".cards__experience");
+
+        experienceCards.forEach((card, index) => {
+          if (index == order - 1) {
+            card.classList.add("active");
+          } else {
+            card.classList.remove("active");
+          }
+        });
+
+        buttons.forEach((button) => {
+          button.classList.remove("text__button--active");
+        });
+        clickedButton.classList.add("text__button--active");
+      });
+    });
+  </script>
 </html>
