@@ -3,14 +3,46 @@
 
 .main {
   .experience {
-    overflow: hidden;
+    overflow-x: hidden;
     background: $gray-50;
     @include vertical-padding(96px, 96px);
+    position: relative;
+    &::before {
+      content: "";
+      width: 262px;
+      height: 192px;
+      position: absolute;
+      background-image: url("../../assets/images/oranges1_exp.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      bottom: 0;
+      left: 0;
+    }
+    &::after {
+      content: "";
+      width: 279px;
+      height: 158px;
+      position: absolute;
+      background-image: url("../../assets/images/oranges2_exp.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      bottom: 0;
+      right: 0;
+    }
     .experience__content {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 48px;
+      // .content__img {
+      //   position: absolute;
+      // }
+      // .img1 {
+      //   width: 262px;
+      //   height: 192px;
+      //   left: 0;
+      //   top: 100%;
+      // }
       @include horizontal-padding(32px, 32px);
       .content__text {
         display: flex;
@@ -103,7 +135,7 @@
             }
           }
           .inactive-right {
-            transform: translateY(150%);
+            transform: translateX(150%);
             @media (max-width: 736px) {
               transform: unset;
               display: none;
