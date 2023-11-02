@@ -26,21 +26,36 @@
           font-weight: 400;
         }
       }
+
+      @media (max-width: 736px) {
+        .event-1 {
+          grid-template-rows: 30px 1fr 30px 0fr 30px 0fr;
+        }
+        .event-2 {
+          grid-template-rows: 30px 0fr 30px 1fr 30px 0fr;
+        }
+        .event-3 {
+          grid-template-rows: 30px 0fr 30px 0fr 30px 1fr;
+        }
+      }
+
       .content__cards {
         display: grid;
         grid-template-areas: 
-        "date exp"
+        "date1 exp"
+        "date2 exp"
+        "date3 exp"
         ;
-        gap: 32px;
+        // gap: 32px;
+        transition: 1000ms ease;
         @media (max-width: 736px) {
-          grid-template-columns: 1fr;
           grid-template-areas: 
           "date1"
-          "exp"
+          "exp1"
           "date2"
-          "exp"
+          "exp2"
           "date3"
-          "exp";
+          "exp3";
         }
           .cards__dates {
             background: $gray-default;
@@ -48,7 +63,7 @@
             @include vertical-padding(16px, 16px);
             align-self: start;
             grid-area: date;
-            .dates__text {
+            // .dates__text {
               @include vertical-padding(16px, 16px);
               @include horizontal-padding(32px, 32px);
               @media (max-width: 736px) {
@@ -68,20 +83,42 @@
               .text__button--active {
                 color: $gray-950;
               }
+            // }
+          }
+          @media (max-width: 736px) {
+            .card__1 {
+              grid-area: exp1;
+            }
+            .card__2 {
+              grid-area: exp2;
+            }
+            .card__3 {
+              grid-area: exp3;
             }
           }
-          // @media (max-width: 736px) {
-          //   .card__1 {
-          //     grid-area: exp1;
-          //   }
-          //   .card__2 {
-          //     grid-area: exp2;
-          //   }
-          //   .card__3 {
-          //     grid-area: exp3;
-          //   } 
-          // }
+
+          .active {
+            transform: translateX(0);
+            @media (max-width: 736px) {
+              transform: unset;
+            }
+          }
+          .inactive-right {
+            transform: translateY(150%);
+            @media (max-width: 736px) {
+              transform: unset;
+              display: none;
+            }
+          }
+          .inactive-left {
+            transform: translateX(150%);
+            @media (max-width: 736px) {
+              transform: unset;
+            }
+          }
+          
           .cards__experience {
+            transition: 1000ms ease;
             background: $gray-default;
             border-radius: 12px;
             @include vertical-padding(32px, 32px);
@@ -89,10 +126,9 @@
             display: flex;
             flex-direction: row;
             gap: 48px;
-            grid-area: exp;
-            transform: translateX(150%);
-            opacity: 0;
-            transition: transform 1s, opacity 0.5s;
+            @media (min-width: 736px) {
+              grid-area: exp;
+            }
             max-height: 236px;
             .experience__img {
               align-self: flex-start;
@@ -139,10 +175,7 @@
               }
             }
           }
-          .active {
-            transform: translateX(0);
-            opacity: 1;
-          }
+
       }
     }
   }

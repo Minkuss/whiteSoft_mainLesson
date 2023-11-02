@@ -289,38 +289,67 @@ h3 {
       .main .experience .experience__content .content__text .text__p {
         color: #4B5563;
         font-weight: 400; }
+    @media (max-width: 736px) {
+      .main .experience .experience__content .event-1 {
+        grid-template-rows: 30px 1fr 30px 0fr 30px 0fr; }
+      .main .experience .experience__content .event-2 {
+        grid-template-rows: 30px 0fr 30px 1fr 30px 0fr; }
+      .main .experience .experience__content .event-3 {
+        grid-template-rows: 30px 0fr 30px 0fr 30px 1fr; } }
     .main .experience .experience__content .content__cards {
       display: grid;
-      grid-template-areas: "date exp";
-      gap: 32px; }
+      grid-template-areas: "date1 exp" "date2 exp" "date3 exp";
+      transition: 1000ms ease; }
       @media (max-width: 736px) {
         .main .experience .experience__content .content__cards {
-          grid-template-columns: 1fr;
-          grid-template-areas: "date1" "exp" "date2" "exp" "date3" "exp"; } }
+          grid-template-areas: "date1" "exp1" "date2" "exp2" "date3" "exp3"; } }
       .main .experience .experience__content .content__cards .cards__dates {
         background: #FFF;
         border-radius: 12px;
         padding-top: 16px;
         padding-bottom: 16px;
         align-self: start;
-        grid-area: date; }
-        .main .experience .experience__content .content__cards .cards__dates .dates__text {
-          padding-top: 16px;
-          padding-bottom: 16px;
-          padding-left: 32px;
-          padding-right: 32px; }
-          @media (max-width: 736px) {
-            .main .experience .experience__content .content__cards .cards__dates .dates__text:nth-child(1) {
-              grid-area: date1; }
-            .main .experience .experience__content .content__cards .cards__dates .dates__text:nth-child(2) {
-              grid-area: date1; }
-            .main .experience .experience__content .content__cards .cards__dates .dates__text:nth-child(3) {
-              grid-area: date1; } }
-          .main .experience .experience__content .content__cards .cards__dates .dates__text .text__button {
-            color: #6B7280; }
-          .main .experience .experience__content .content__cards .cards__dates .dates__text .text__button--active {
-            color: #030712; }
+        grid-area: date;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-left: 32px;
+        padding-right: 32px; }
+        @media (max-width: 736px) {
+          .main .experience .experience__content .content__cards .cards__dates:nth-child(1) {
+            grid-area: date1; }
+          .main .experience .experience__content .content__cards .cards__dates:nth-child(2) {
+            grid-area: date1; }
+          .main .experience .experience__content .content__cards .cards__dates:nth-child(3) {
+            grid-area: date1; } }
+        .main .experience .experience__content .content__cards .cards__dates .text__button {
+          color: #6B7280; }
+        .main .experience .experience__content .content__cards .cards__dates .text__button--active {
+          color: #030712; }
+      @media (max-width: 736px) {
+        .main .experience .experience__content .content__cards .card__1 {
+          grid-area: exp1; }
+        .main .experience .experience__content .content__cards .card__2 {
+          grid-area: exp2; }
+        .main .experience .experience__content .content__cards .card__3 {
+          grid-area: exp3; } }
+      .main .experience .experience__content .content__cards .active {
+        transform: translateX(0); }
+        @media (max-width: 736px) {
+          .main .experience .experience__content .content__cards .active {
+            transform: unset; } }
+      .main .experience .experience__content .content__cards .inactive-right {
+        transform: translateY(150%); }
+        @media (max-width: 736px) {
+          .main .experience .experience__content .content__cards .inactive-right {
+            transform: unset;
+            display: none; } }
+      .main .experience .experience__content .content__cards .inactive-left {
+        transform: translateX(150%); }
+        @media (max-width: 736px) {
+          .main .experience .experience__content .content__cards .inactive-left {
+            transform: unset; } }
       .main .experience .experience__content .content__cards .cards__experience {
+        transition: 1000ms ease;
         background: #FFF;
         border-radius: 12px;
         padding-top: 32px;
@@ -330,11 +359,10 @@ h3 {
         display: flex;
         flex-direction: row;
         gap: 48px;
-        grid-area: exp;
-        transform: translateX(150%);
-        opacity: 0;
-        transition: transform 1s, opacity 0.5s;
         max-height: 236px; }
+        @media (min-width: 736px) {
+          .main .experience .experience__content .content__cards .cards__experience {
+            grid-area: exp; } }
         .main .experience .experience__content .content__cards .cards__experience .experience__img {
           align-self: flex-start; }
         .main .experience .experience__content .content__cards .cards__experience .experience__info {
@@ -370,8 +398,5 @@ h3 {
               .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__li .li__span {
                 color: #4B5563;
                 font-weight: 400; }
-      .main .experience .experience__content .content__cards .active {
-        transform: translateX(0);
-        opacity: 1; }
 
 /*# sourceMappingURL=main.css.map */

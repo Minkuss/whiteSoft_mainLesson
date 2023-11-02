@@ -112,29 +112,32 @@
 
           <!-- Cards block--------------------------------------------------------------->
           <div class="content__cards">
-            <div class="cards__dates shadow__md">
-              <div class="dates__text">
-                <button
-                  data-order="1"
-                  class="text__button text__button--active body2"
-                >
-                  May 2020 - Present
-                </button>
-              </div>
-              <div class="dates__text">
-                <button data-order="2" class="text__button body2">
-                  Dec 2019 - May 2020
-                </button>
-              </div>
-              <div class="dates__text">
-                <button data-order="3" class="text__button body2">
-                  May 2019 - Dec 2019
-                </button>
-              </div>
+            <!-- <div class="cards__dates shadow__md"> -->
+            <div class="dates__text">
+              <button
+                data-order="1"
+                class="text__button text__button--active body2"
+              >
+                May 2020 - Present
+              </button>
             </div>
+            <div class="dates__text">
+              <button data-order="2" class="text__button body2">
+                Dec 2019 - May 2020
+              </button>
+            </div>
+            <div class="dates__text">
+              <button data-order="3" class="text__button body2">
+                May 2019 - Dec 2019
+              </button>
+            </div>
+            <!-- </div> -->
 
             <!-- Cards experience------------------------------------------------------>
-            <div class="cards__experience card__1 active shadow__md">
+            <div
+              data-order="1"
+              class="cards__experience card__1 active shadow__md"
+            >
               <img
                 class="experience__img"
                 src="./assets/images/ws_logo.svg"
@@ -166,7 +169,10 @@
               </div>
             </div>
 
-            <div class="cards__experience card__2 shadow__md">
+            <div
+              data-order="2"
+              class="cards__experience card__2 inactive-right shadow__md"
+            >
               <img
                 class="experience__img"
                 src="./assets/images/ws_logo.svg"
@@ -198,7 +204,10 @@
               </div>
             </div>
 
-            <div class="cards__experience card__3 shadow__md">
+            <div
+              data-order="3"
+              class="cards__experience card__3 inactive-right shadow__md"
+            >
               <img
                 class="experience__img"
                 src="./assets/images/ws_logo.svg"
@@ -236,25 +245,61 @@
   </body>
   <script>
     const buttons = document.querySelectorAll(".text__button");
+    let prev = 1;
 
     buttons.forEach((button) => {
       button.addEventListener("click", (event) => {
         const clickedButton = event.currentTarget;
-        const order = clickedButton.getAttribute("data-order");
+        const order = Number(clickedButton.getAttribute("data-order"));
         const experienceCards = document.querySelectorAll(".cards__experience");
 
-        experienceCards.forEach((card, index) => {
-          if (index == order - 1) {
-            card.classList.add("active");
-          } else {
-            card.classList.remove("active");
-          }
+        experienceCards.forEach((card) => {
+          const cardOrder = Number(card.getAttribute("data-order"));
+
+          // card.classList.add(
+          //   cardOrder === order
+          //     ? "active"
+          //     : cardOrder < order
+          //     ? "inactive-right"
+          //     : "inactive-left"
+          // );
+
+          console.log(`order: ${order}`);
+          console.log(`cardOrder: ${cardOrder}`);
+
+          card.className =
+            order === cardOrder
+              ? `cards__experience card__${cardOrder} active shadow__md`
+              : order < cardOrder
+              ? `cards__experience card__${cardOrder} inactive-right shadow__md`
+              : `cards__experience card__${cardOrder} inactive-left shadow__md`;
+
+          // if (index == order - 1) {
+          //   card.classList.add("active");
+          // } else {
+          //   card.classList.remove("active");
+          // }
         });
+
+        document.querySelector(
+          ".content__cards"
+        ).className = `content__cards event-${order}`;
+
+        // document.querySelector(".active").className =
+        //   order > prev
+        //     ? `cards__experience card__${order} inactive-left shadow__md`
+        //     : `cards__experience card__${order} inactive-right shadow__md`;
+
+        // document.querySelector(
+        //   `cards__experience card__${order} shadow__md`
+        // ).className = `cards__experience card__${order} active shadow__md`;
 
         buttons.forEach((button) => {
           button.classList.remove("text__button--active");
         });
         clickedButton.classList.add("text__button--active");
+
+        prev = order;
       });
     });
   </script>
