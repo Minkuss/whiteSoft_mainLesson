@@ -3,7 +3,7 @@
 
 .container {
   @include horizontal-padding(80px, 80px);
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     @include horizontal-padding(64px, 64px);
   }
 }

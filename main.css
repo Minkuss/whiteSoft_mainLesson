@@ -46,7 +46,7 @@ input {
 .container {
   padding-left: 80px;
   padding-right: 80px; }
-  @media (max-width: 1023px) {
+  @media (max-width: 1024px) {
     .container {
       padding-left: 64px;
       padding-right: 64px; } }
@@ -291,22 +291,31 @@ h3 {
         font-weight: 400; }
     .main .experience .experience__content .content__cards {
       display: grid;
-      grid-template-areas: "date exp" "date exp" "date exp";
+      grid-template-areas: "date exp";
       gap: 32px; }
+      @media (max-width: 736px) {
+        .main .experience .experience__content .content__cards {
+          grid-template-columns: 1fr;
+          grid-template-areas: "date1" "exp" "date2" "exp" "date3" "exp"; } }
       .main .experience .experience__content .content__cards .cards__dates {
-        grid-area: date;
         background: #FFF;
         border-radius: 12px;
         padding-top: 16px;
         padding-bottom: 16px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; }
+        align-self: start;
+        grid-area: date; }
         .main .experience .experience__content .content__cards .cards__dates .dates__text {
           padding-top: 16px;
           padding-bottom: 16px;
           padding-left: 32px;
           padding-right: 32px; }
+          @media (max-width: 736px) {
+            .main .experience .experience__content .content__cards .cards__dates .dates__text:nth-child(1) {
+              grid-area: date1; }
+            .main .experience .experience__content .content__cards .cards__dates .dates__text:nth-child(2) {
+              grid-area: date1; }
+            .main .experience .experience__content .content__cards .cards__dates .dates__text:nth-child(3) {
+              grid-area: date1; } }
           .main .experience .experience__content .content__cards .cards__dates .dates__text .text__button {
             color: #6B7280; }
           .main .experience .experience__content .content__cards .cards__dates .dates__text .text__button--active {
@@ -324,7 +333,8 @@ h3 {
         grid-area: exp;
         transform: translateX(150%);
         opacity: 0;
-        transition: transform 1s, opacity 0.5s; }
+        transition: transform 1s, opacity 0.5s;
+        max-height: 236px; }
         .main .experience .experience__content .content__cards .cards__experience .experience__img {
           align-self: flex-start; }
         .main .experience .experience__content .content__cards .cards__experience .experience__info {
@@ -337,7 +347,14 @@ h3 {
           .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul {
             display: flex;
             flex-direction: column;
-            gap: 16px; }
+            gap: 16px;
+            overflow-y: scroll; }
+            .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul::-webkit-scrollbar {
+              width: 4px; }
+            .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul::-webkit-scrollbar-thumb {
+              background-color: #D1D5DB;
+              border: 1px solid #D1D5DB;
+              border-radius: 2px; }
             .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__li {
               display: flex;
               align-items: center;
