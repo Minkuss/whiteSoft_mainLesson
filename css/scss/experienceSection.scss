@@ -29,13 +29,13 @@
 
       @media (max-width: 736px) {
         .event-1 {
-          grid-template-rows: 30px 1fr 30px 0fr 30px 0fr;
+          grid-template-rows: 40px 1fr 40px 0fr 40px 0fr;
         }
         .event-2 {
-          grid-template-rows: 30px 0fr 30px 1fr 30px 0fr;
+          grid-template-rows: 40px 0fr 40px 1fr 40px 0fr;
         }
         .event-3 {
-          grid-template-rows: 30px 0fr 30px 0fr 30px 1fr;
+          grid-template-rows: 40px 0fr 40px 0fr 40px 1fr;
         }
       }
 
@@ -46,7 +46,9 @@
         "date2 exp"
         "date3 exp"
         ;
-        // gap: 32px;
+        @media (min-width: 736px) {
+          gap: 32px;
+        }
         transition: 1000ms ease;
         @media (max-width: 736px) {
           grid-template-areas: 
@@ -57,13 +59,10 @@
           "date3"
           "exp3";
         }
-          .cards__dates {
+          .dates__text {
             background: $gray-default;
             border-radius: 12px;
-            @include vertical-padding(16px, 16px);
             align-self: start;
-            grid-area: date;
-            // .dates__text {
               @include vertical-padding(16px, 16px);
               @include horizontal-padding(32px, 32px);
               @media (max-width: 736px) {
@@ -71,10 +70,10 @@
                   grid-area: date1;
                 }
                 &:nth-child(2) {
-                  grid-area: date1;
+                  grid-area: date2;
                 }
                 &:nth-child(3) {
-                  grid-area: date1;
+                  grid-area: date3;
                 }
               }
               .text__button {
@@ -118,16 +117,29 @@
           }
           
           .cards__experience {
+            overflow: hidden;
             transition: 1000ms ease;
             background: $gray-default;
             border-radius: 12px;
-            @include vertical-padding(32px, 32px);
-            @include horizontal-padding(32px, 32px);
             display: flex;
             flex-direction: row;
             gap: 48px;
+            @include vertical-padding(32px, 32px);
+            @include horizontal-padding(32px, 32px);
+            @media (max-width: 736px) {
+              padding: 0;
+              .experience__img {
+                margin-top: 32px;
+                margin-left: 32px;
+              }
+            }
+
             @media (min-width: 736px) {
               grid-area: exp;
+            }
+            @media (max-width: 736px) {
+              flex-direction: column;
+              gap: 24px;
             }
             max-height: 236px;
             .experience__img {
@@ -137,6 +149,9 @@
               display: flex;
               flex-direction: column;
               gap: 16px;
+              @media (max-width: 736px) {
+                margin-left: 32px;
+              }
               .info__prof {
                 color: $gray-900;
                 font-weight: 600;
@@ -145,7 +160,7 @@
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
-                overflow-y: scroll;
+                overflow-y: auto;
                 &::-webkit-scrollbar {
                   width: 4px;
                 }
@@ -154,7 +169,7 @@
                   border: 1px solid $gray-300;
                   border-radius: 2px;
                 }
-                .ul__li {
+                .ul__item {
                   display: flex;
                   align-items: center;
                   gap: 8px;
@@ -167,7 +182,7 @@
                     align-self: flex-start;
                     margin-top: 10px;
                   }
-                  .li__span {
+                  .item__span {
                     color: $gray-600;
                     font-weight: 400;
                   }
@@ -175,7 +190,6 @@
               }
             }
           }
-
       }
     }
   }

@@ -111,8 +111,7 @@
           </div>
 
           <!-- Cards block--------------------------------------------------------------->
-          <div class="content__cards">
-            <!-- <div class="cards__dates shadow__md"> -->
+          <div class="content__cards event-1">
             <div class="dates__text">
               <button
                 data-order="1"
@@ -131,7 +130,6 @@
                 May 2019 - Dec 2019
               </button>
             </div>
-            <!-- </div> -->
 
             <!-- Cards experience------------------------------------------------------>
             <div
@@ -148,20 +146,20 @@
                   >Middle Frontend Developer</span
                 >
                 <ul class="info__ul">
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Collaborating with senior developers to enhance skills
                       and learn new technologies</span
                     >
                   </li>
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Mentoring and providing guidance to junior frontend
                       developers</span
                     >
                   </li>
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Optimizing the performance of web applications</span
                     >
                   </li>
@@ -183,20 +181,20 @@
                   >Junior Frontend Developer</span
                 >
                 <ul class="info__ul">
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Collaborating with senior developers to enhance skills
                       and learn new technologies</span
                     >
                   </li>
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Mentoring and providing guidance to junior frontend
                       developers</span
                     >
                   </li>
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Optimizing the performance of web applications</span
                     >
                   </li>
@@ -218,20 +216,20 @@
                   >Senior Frontend Developer</span
                 >
                 <ul class="info__ul">
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Collaborating with senior developers to enhance skills
                       and learn new technologies</span
                     >
                   </li>
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Mentoring and providing guidance to junior frontend
                       developers</span
                     >
                   </li>
-                  <li class="ul__li">
-                    <span class="li__span body2"
+                  <li class="ul__item">
+                    <span class="item__span body2"
                       >Optimizing the performance of web applications</span
                     >
                   </li>
@@ -256,14 +254,6 @@
         experienceCards.forEach((card) => {
           const cardOrder = Number(card.getAttribute("data-order"));
 
-          // card.classList.add(
-          //   cardOrder === order
-          //     ? "active"
-          //     : cardOrder < order
-          //     ? "inactive-right"
-          //     : "inactive-left"
-          // );
-
           console.log(`order: ${order}`);
           console.log(`cardOrder: ${cardOrder}`);
 
@@ -273,26 +263,11 @@
               : order < cardOrder
               ? `cards__experience card__${cardOrder} inactive-right shadow__md`
               : `cards__experience card__${cardOrder} inactive-left shadow__md`;
-
-          // if (index == order - 1) {
-          //   card.classList.add("active");
-          // } else {
-          //   card.classList.remove("active");
-          // }
         });
 
         document.querySelector(
           ".content__cards"
         ).className = `content__cards event-${order}`;
-
-        // document.querySelector(".active").className =
-        //   order > prev
-        //     ? `cards__experience card__${order} inactive-left shadow__md`
-        //     : `cards__experience card__${order} inactive-right shadow__md`;
-
-        // document.querySelector(
-        //   `cards__experience card__${order} shadow__md`
-        // ).className = `cards__experience card__${order} active shadow__md`;
 
         buttons.forEach((button) => {
           button.classList.remove("text__button--active");
