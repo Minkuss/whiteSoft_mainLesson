@@ -35,14 +35,29 @@
   }
 }
 
-.shadow__md {
+.shadow--md {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
 }
 
-.shadow__lg {
+.shadow--lg {
   box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.04), 0px 4px 3px 0px rgba(0, 0, 0, 0.10);
 }
 
-.shadow__2xl {
+.shadow--2xl {
   box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.15);
+}
+
+.icon__button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: $orange-400;
+  padding: 6px;
+  &:hover {
+    background: $orange-300;
+  }
+  &:active {
+    background: $orange-500;
+  }
 }

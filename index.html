@@ -134,7 +134,7 @@
             <!-- Cards experience------------------------------------------------------>
             <div
               data-order="1"
-              class="cards__experience card__1 active shadow__md"
+              class="cards__experience card__1 active shadow--md"
             >
               <img
                 class="experience__img"
@@ -169,7 +169,7 @@
 
             <div
               data-order="2"
-              class="cards__experience card__2 inactive-right shadow__md"
+              class="cards__experience card__2 inactive-right shadow--md"
             >
               <img
                 class="experience__img"
@@ -204,7 +204,7 @@
 
             <div
               data-order="3"
-              class="cards__experience card__3 inactive-right shadow__md"
+              class="cards__experience card__3 inactive-right shadow--md"
             >
               <img
                 class="experience__img"
@@ -237,18 +237,58 @@
               </div>
             </div>
           </div>
-          <!-- <img
-            class="content__img img1"
-            src="./assets/images/oranges1_exp.png"
-          />
-          <img
-            class="content__img img2"
-            src="./assets/images/oranges2_exp.png"
-          />
-          <img
-            class="content__img img3"
-            src="./assets/images/oranges3_exp.png"
-          /> -->
+        </div>
+      </div>
+      <div class="works container">
+        <div class="works__content">
+          <div class="content__text">
+            <h1 class="text__h1">Work</h1>
+            <p class="text__p subtitle">
+              Some of the noteworthy projects Capibarara have built:
+            </p>
+          </div>
+          <div class="content__card">
+            <div class="card__image">
+              <img src="./assets/images/facts.png" />
+            </div>
+            <div class="card__content">
+              <span class="content__heading subtitle"> Capybara Facts </span>
+              <p class="card__info">
+                This site provides detailed and accurate information about
+                capybaras. It covers various topics such as their habitat,
+                physical characteristics, behavior, diet, and lifecycle. It may
+                also include interesting facts and trivia about capybaras. The
+                site aims to educate visitors who are interested in learning
+                more about these unique creatures
+              </p>
+              <div class="card__skills">
+                <div class="skills__tag">
+                  <span class="tag__text">Next.js</span>
+                </div>
+                <div class="skills__tag">
+                  <span class="tag__text">Typescript</span>
+                </div>
+                <div class="skills__tag">
+                  <span class="tag__text">PostgreSQL</span>
+                </div>
+                <div class="skills__tag">
+                  <span class="tag__text">Tailwindcss</span>
+                </div>
+                <div class="skills__tag">
+                  <span class="tag__text">Figma</span>
+                </div>
+                <div class="skills__tag">
+                  <span class="tag__text">Storybook</span>
+                </div>
+                <div class="skills__tag">
+                  <span class="tag__text">Git</span>
+                </div>
+              </div>
+              <a class="card__icon icon__button"
+                ><img src="./assets/images/link_ico.svg" alt="Ссылка"
+              /></a>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -271,10 +311,10 @@
 
           card.className =
             order === cardOrder
-              ? `cards__experience card__${cardOrder} active shadow__md`
+              ? `cards__experience card__${cardOrder} active shadow--md`
               : order < cardOrder
-              ? `cards__experience card__${cardOrder} inactive-right shadow__md`
-              : `cards__experience card__${cardOrder} inactive-left shadow__md`;
+              ? `cards__experience card__${cardOrder} inactive-right shadow--md`
+              : `cards__experience card__${cardOrder} inactive-left shadow--md`;
         });
 
         document.querySelector(

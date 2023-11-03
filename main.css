@@ -19,6 +19,9 @@ button {
   all: unset;
   cursor: pointer; }
 
+a {
+  cursor: pointer; }
+
 footer, header, nav, section, main {
   display: block; }
 
@@ -71,14 +74,26 @@ input {
   .button:active {
     background: #F4900C; }
 
-.shadow__md {
+.shadow--md {
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07); }
 
-.shadow__lg {
+.shadow--lg {
   box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.04), 0px 4px 3px 0px rgba(0, 0, 0, 0.1); }
 
-.shadow__2xl {
+.shadow--2xl {
   box-shadow: 0px 25px 25px 0px rgba(0, 0, 0, 0.15); }
+
+.icon__button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #F6A63D;
+  padding: 6px; }
+  .icon__button:hover {
+    background: #F7B255; }
+  .icon__button:active {
+    background: #F4900C; }
 
 h1 {
   font-family: "Inter";
@@ -279,7 +294,7 @@ h3 {
     width: 262px;
     height: 192px;
     position: absolute;
-    background-image: url("../assets/images/oranges1_exp.png");
+    background-image: url("../../assets/images/oranges1_exp.png");
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 0;
@@ -289,7 +304,7 @@ h3 {
     width: 279px;
     height: 158px;
     position: absolute;
-    background-image: url("../assets/images/oranges2_exp.png");
+    background-image: url("../../assets/images/oranges2_exp.png");
     background-size: contain;
     background-repeat: no-repeat;
     bottom: 0;
@@ -435,5 +450,9 @@ h3 {
               .main .experience .experience__content .content__cards .cards__experience .experience__info .info__ul .ul__item .item__span {
                 color: #4B5563;
                 font-weight: 400; }
+
+.works {
+  padding-top: 96px;
+  padding-bottom: 96px; }
 
 /*# sourceMappingURL=main.css.map */

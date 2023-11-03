@@ -1,0 +1,6 @@
+@import "./colors.scss";
+@import "./paddings.scss";
+
+.works {
+  @include vertical-padding(96px, 96px)
+}
