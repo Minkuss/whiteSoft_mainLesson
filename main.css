@@ -340,18 +340,24 @@ h3 {
       transition: 1000ms ease; }
       @media (min-width: 736px) {
         .main .experience .experience__content .content__cards {
-          gap: 32px; } }
+          column-gap: 32px; } }
       @media (max-width: 736px) {
         .main .experience .experience__content .content__cards {
           grid-template-areas: "date1" "exp1" "date2" "exp2" "date3" "exp3"; } }
       .main .experience .experience__content .content__cards .dates__text {
         background: #FFF;
-        border-radius: 12px;
-        align-self: start;
+        display: flex;
+        z-index: 1;
         padding-top: 16px;
         padding-bottom: 16px;
         padding-left: 32px;
         padding-right: 32px; }
+        .main .experience .experience__content .content__cards .dates__text:first-child {
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px; }
+        .main .experience .experience__content .content__cards .dates__text:nth-child(3) {
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px; }
         @media (max-width: 736px) {
           .main .experience .experience__content .content__cards .dates__text:nth-child(1) {
             grid-area: date1; }
@@ -360,7 +366,8 @@ h3 {
           .main .experience .experience__content .content__cards .dates__text:nth-child(3) {
             grid-area: date3; } }
         .main .experience .experience__content .content__cards .dates__text .text__button {
-          color: #6B7280; }
+          color: #6B7280;
+          align-self: center; }
         .main .experience .experience__content .content__cards .dates__text .text__button--active {
           color: #030712; }
       @media (max-width: 736px) {
@@ -454,5 +461,63 @@ h3 {
 .works {
   padding-top: 96px;
   padding-bottom: 96px; }
+  .works .works__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px; }
+    .works .works__content .content__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px; }
+      .works .works__content .content__text .text__h1 {
+        font-weight: 700;
+        color: #4B5563; }
+      .works .works__content .content__text .text__p {
+        font-weight: 400;
+        color: #4B5563; }
+    .works .works__content .card__reversed {
+      flex-direction: row-reverse; }
+    .works .works__content .content__card {
+      display: flex;
+      align-self: center;
+      max-width: 1152px;
+      border-radius: 12px; }
+      .works .works__content .content__card .card__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #F9FAFB;
+        border-right: 1px solid #F3F4F6;
+        padding: 48px; }
+        .works .works__content .content__card .card__image img {
+          max-width: 480px;
+          height: 100%; }
+      .works .works__content .content__card .card__content {
+        padding: 48px; }
+        .works .works__content .content__card .card__content .wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 24px; }
+        .works .works__content .content__card .card__content .card__heading {
+          font-weight: 600;
+          color: #111827; }
+        .works .works__content .content__card .card__content .card__info {
+          font-weight: 400;
+          color: #4B5563; }
+        .works .works__content .content__card .card__content .card__skills {
+          display: flex;
+          gap: 8px;
+          flex-wrap: wrap; }
+          .works .works__content .content__card .card__content .card__skills .skills__tag {
+            padding: 4px 20px;
+            background: #E5E7EB;
+            border-radius: 12px; }
+            .works .works__content .content__card .card__content .card__skills .skills__tag .tag__text {
+              font-weight: 500;
+              color: #4B5563; }
+        .works .works__content .content__card .card__content .card__icon {
+          align-self: flex-start; }
 
 /*# sourceMappingURL=main.css.map */
