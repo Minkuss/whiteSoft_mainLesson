@@ -49,7 +49,7 @@ input {
 .container {
   padding-left: 80px;
   padding-right: 80px; }
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     .container {
       padding-left: 64px;
       padding-right: 64px; } }
@@ -347,6 +347,7 @@ h3 {
       .main .experience .experience__content .content__cards .dates__text {
         background: #FFF;
         display: flex;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
         z-index: 1;
         padding-top: 16px;
         padding-bottom: 16px;
@@ -519,5 +520,111 @@ h3 {
               color: #4B5563; }
         .works .works__content .content__card .card__content .card__icon {
           align-self: flex-start; }
+
+.testimonials {
+  padding-top: 96px;
+  padding-bottom: 96px; }
+  .testimonials .testimonials__content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px; }
+    .testimonials .testimonials__content .content__text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center; }
+      .testimonials .testimonials__content .content__text .text__h1 {
+        font-weight: 700;
+        color: #F6A63D; }
+      .testimonials .testimonials__content .content__text .text__p {
+        font-weight: 400;
+        color: #4B5563; }
+  .testimonials .content__cards {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px; }
+    .testimonials .content__cards .cards__trio {
+      display: flex;
+      flex-direction: column;
+      gap: 28px; }
+    .testimonials .content__cards .cards__duo {
+      display: flex;
+      gap: 48px; }
+    .testimonials .content__cards .testimonial__card {
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      border-radius: 12px;
+      align-self: stretch; }
+      .testimonials .content__cards .testimonial__card .card__heading {
+        display: flex;
+        gap: 32px; }
+        .testimonials .content__cards .testimonial__card .card__heading .card__logo {
+          height: 104px; }
+        .testimonials .content__cards .testimonial__card .card__heading .card__details {
+          align-self: center; }
+          .testimonials .content__cards .testimonial__card .card__heading .card__details .details__parag .name {
+            font-weight: 600;
+            color: #111827; }
+          .testimonials .content__cards .testimonial__card .card__heading .card__details .details__parag .prof {
+            font-weight: 400;
+            color: #4B5563; }
+          .testimonials .content__cards .testimonial__card .card__heading .card__details .details__h3 {
+            font-weight: 600;
+            color: #111827; }
+          .testimonials .content__cards .testimonial__card .card__heading .card__details .details__span {
+            font-weight: 400;
+            color: #4B5563; }
+      .testimonials .content__cards .testimonial__card .hidden {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; }
+      .testimonials .content__cards .testimonial__card .card__info {
+        font-weight: 400;
+        color: #4B5563; }
+
+.getInTouch {
+  padding-top: 96px;
+  padding-bottom: 96px; }
+  .getInTouch .getInTouch__content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px; }
+    .getInTouch .getInTouch__content .content__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px; }
+      .getInTouch .getInTouch__content .content__text .text__h1 {
+        font-weight: 700;
+        color: #4B5563; }
+      .getInTouch .getInTouch__content .content__text .text__p {
+        font-weight: 400;
+        color: #4B5563;
+        max-width: 576px;
+        text-align: center; }
+    .getInTouch .getInTouch__content .content__contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px; }
+      .getInTouch .getInTouch__content .content__contacts .contacts__mail {
+        display: flex;
+        gap: 8px; }
+        .getInTouch .getInTouch__content .content__contacts .contacts__mail .main__icon {
+          align-self: center; }
+        .getInTouch .getInTouch__content .content__contacts .contacts__mail .mail__text {
+          font-weight: 600;
+          color: #4B5563; }
+      .getInTouch .getInTouch__content .content__contacts .contacts__phone {
+        display: flex;
+        gap: 8px; }
+        .getInTouch .getInTouch__content .content__contacts .contacts__phone .phone__icon {
+          align-self: center; }
+        .getInTouch .getInTouch__content .content__contacts .contacts__phone .phone__text {
+          font-weight: 600;
+          color: #4B5563; }
 
 /*# sourceMappingURL=main.css.map */

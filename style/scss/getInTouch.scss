@@ -1,0 +1,56 @@
+@import "./colors.scss";
+@import "./paddings.scss";
+
+.getInTouch {
+  padding-top: 96px;
+  padding-bottom: 96px;
+  .getInTouch__content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    .content__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      .text__h1 {
+        font-weight: 700;
+        color: $gray-600;
+      }
+      .text__p {
+        font-weight: 400;
+        color: $gray-600;
+        max-width: 576px;
+        text-align: center;
+      }
+    }
+    .content__contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      .contacts__mail {
+        display: flex;
+        gap: 8px;
+        .main__icon {
+          align-self: center;
+        }
+        .mail__text {
+          font-weight: 600;
+          color: $gray-600;
+        }
+      }
+      .contacts__phone {
+        display: flex;
+        gap: 8px;
+        .phone__icon {
+          align-self: center;
+        }
+        .phone__text {
+          font-weight: 600;
+          color: $gray-600;
+        }
+      }
+    }
+  }
+}
