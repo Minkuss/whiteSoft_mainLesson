@@ -6,6 +6,9 @@
   @media (max-width: 1023px) {
     @include horizontal-padding(64px, 64px);
   }
+  @media (max-width: 767px) {
+    @include horizontal-padding(16px, 16px);
+  }
 }
 
 .links {

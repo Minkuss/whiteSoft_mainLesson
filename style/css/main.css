@@ -53,6 +53,10 @@ input {
     .container {
       padding-left: 64px;
       padding-right: 64px; } }
+  @media (max-width: 767px) {
+    .container {
+      padding-left: 16px;
+      padding-right: 16px; } }
 
 .links {
   color: #4B5563;
@@ -160,26 +164,54 @@ h3 {
   font-size: 14px;
   line-height: 20px; }
 
+@media (max-width: 767px) {
+  .header {
+    padding-top: 16px;
+    padding-bottom: 16px; } }
 .header .header__nav {
   display: flex;
   height: 68px;
   justify-content: space-between;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  padding-left: 32px;
-  padding-right: 32px; }
+  padding: 16px 32px; }
+  @media (max-width: 767px) {
+    .header .header__nav {
+      padding: 0;
+      align-items: center; } }
+  .header .header__nav .nav__img {
+    width: 129.003px;
+    height: 36px; }
+    @media (max-width: 767px) {
+      .header .header__nav .nav__img {
+        align-self: stretch; } }
   .header .header__nav .nav__links {
     display: flex;
     gap: 24px;
     align-self: center; }
+    @media (max-width: 767px) {
+      .header .header__nav .nav__links {
+        display: none; } }
     .header .header__nav .nav__links .divider {
       width: 1px;
       background: #F3F4F6; }
+  .header .header__nav .nav__burger {
+    display: none; }
+    @media (max-width: 767px) {
+      .header .header__nav .nav__burger {
+        display: flex;
+        background: #F6A63D;
+        cursor: pointer;
+        padding: 6px;
+        border-radius: 8px; } }
 
 .main .hero {
-  height: 100vh;
   padding-top: 96px;
-  padding-bottom: 120px; }
+  padding-bottom: 120px;
+  background-image: url("../../assets/images/wave1.svg"), url("../../assets/images/orange.svg"), url("../../assets/images/wave2.svg");
+  background-repeat: no-repeat;
+  background-position: bottom, left 30% bottom, bottom; }
+  @media (max-width: 767px) {
+    .main .hero {
+      padding-top: 32px; } }
   .main .hero .hero__info {
     display: flex;
     justify-content: space-between;
@@ -195,6 +227,20 @@ h3 {
       justify-content: center;
       align-items: flex-end;
       gap: 48px; }
+      .main .hero .hero__info .info__column .info__img--mob {
+        display: none; }
+        @media (max-width: 767px) {
+          .main .hero .hero__info .info__column .info__img--mob {
+            display: block;
+            width: 320px;
+            height: 360px;
+            grid-area: img; } }
+      @media (max-width: 767px) {
+        .main .hero .hero__info .info__column {
+          display: grid;
+          grid-template-areas: "h1" "img" "btn";
+          justify-items: center;
+          gap: 16px !important; } }
       @media (max-width: 1023px) {
         .main .hero .hero__info .info__column {
           gap: 32px;
@@ -207,6 +253,9 @@ h3 {
         gap: 8px; }
         .main .hero .hero__info .info__column .column__content .content__h1 {
           font-weight: 700; }
+          @media (max-width: 767px) {
+            .main .hero .hero__info .info__column .column__content .content__h1 {
+              grid-area: h1; } }
         .main .hero .hero__info .info__column .column__content .content__p {
           max-width: 768px;
           color: #4B5563; }
@@ -220,9 +269,15 @@ h3 {
           .main .hero .hero__info .info__column .column__btn {
             align-self: center;
             font-weight: 400; } }
+        @media (max-width: 767px) {
+          .main .hero .hero__info .info__column .column__btn {
+            grid-area: btn; } }
     .main .hero .hero__info .info__img {
       width: 320px;
       height: 360px; }
+      @media (max-width: 767px) {
+        .main .hero .hero__info .info__img {
+          display: none; } }
     .main .hero .hero__info .info__bottom {
       position: absolute;
       bottom: 0;
@@ -233,9 +288,9 @@ h3 {
       width: 100%; }
     .main .hero .hero__info .orange1 {
       transform: rotate(-50.031deg);
-      left: 219.82px; }
+      left: 20%; }
     .main .hero .hero__info .orange2 {
-      left: 280.82px; }
+      left: 25%; }
 
 .main .skills {
   display: flex;
@@ -243,8 +298,16 @@ h3 {
   align-items: center;
   gap: 48px;
   position: relative;
-  padding-top: 0px;
-  padding-bottom: 96px; }
+  padding-bottom: 96px;
+  padding-top: 96px; }
+  @media (max-width: 1023px) {
+    .main .skills {
+      padding-bottom: 64px;
+      padding-top: 64px; } }
+  @media (max-width: 767px) {
+    .main .skills {
+      padding-bottom: 32px;
+      padding-top: 32px; } }
   .main .skills .skills__text {
     display: flex;
     flex-direction: column;
@@ -255,19 +318,26 @@ h3 {
       font-weight: 700; }
     .main .skills .skills__text .text__p {
       color: #4B5563;
-      font-weight: 400; }
+      font-weight: 400;
+      text-align: center; }
   .main .skills .skills__icons {
     display: flex;
     justify-content: space-between;
-    width: 720px; }
+    width: 100%;
+    max-width: 720px; }
     @media (max-width: 768px) {
       .main .skills .skills__icons {
-        width: 640px; } }
+        max-width: 480px; } }
     .main .skills .skills__icons .icons__container {
       display: flex;
       flex-direction: column;
       gap: 8px;
       align-items: center; }
+      @media (max-width: 767px) {
+        .main .skills .skills__icons .icons__container:nth-child(4) {
+          display: none; }
+        .main .skills .skills__icons .icons__container:nth-child(5) {
+          display: none; } }
   .main .skills .skills__orange {
     width: 154px;
     height: 198px;
@@ -282,6 +352,9 @@ h3 {
       .main .skills .skills__orange {
         width: 82.133px;
         height: 159.789px; } }
+    @media (max-width: 767px) {
+      .main .skills .skills__orange {
+        display: none; } }
 
 .main .experience {
   overflow-x: hidden;
@@ -289,6 +362,14 @@ h3 {
   padding-top: 96px;
   padding-bottom: 96px;
   position: relative; }
+  @media (max-width: 1023px) {
+    .main .experience {
+      padding-top: 64px;
+      padding-bottom: 64px; } }
+  @media (max-width: 767px) {
+    .main .experience {
+      padding-top: 32px;
+      padding-bottom: 32px; } }
   .main .experience::before {
     content: "";
     width: 262px;
@@ -299,6 +380,9 @@ h3 {
     background-repeat: no-repeat;
     bottom: 0;
     left: 0; }
+    @media (max-width: 767px) {
+      .main .experience::before {
+        display: none; } }
   .main .experience::after {
     content: "";
     width: 279px;
@@ -309,6 +393,9 @@ h3 {
     background-repeat: no-repeat;
     bottom: 0;
     right: 0; }
+    @media (max-width: 767px) {
+      .main .experience::after {
+        display: none; } }
   .main .experience .experience__content {
     display: flex;
     flex-direction: column;
@@ -316,6 +403,10 @@ h3 {
     gap: 48px;
     padding-left: 32px;
     padding-right: 32px; }
+    @media (max-width: 1023px) {
+      .main .experience .experience__content {
+        padding-left: 0;
+        padding-right: 0; } }
     .main .experience .experience__content .content__text {
       display: flex;
       flex-direction: column;
@@ -327,21 +418,21 @@ h3 {
       .main .experience .experience__content .content__text .text__p {
         color: #4B5563;
         font-weight: 400; }
-    @media (max-width: 736px) {
+    @media (max-width: 767px) {
       .main .experience .experience__content .event-1 {
-        grid-template-rows: 40px 1fr 40px 0fr 40px 0fr; }
+        grid-template-rows: 56px 1fr 56px 0fr 56px 0fr; }
       .main .experience .experience__content .event-2 {
-        grid-template-rows: 40px 0fr 40px 1fr 40px 0fr; }
+        grid-template-rows: 56px 0fr 56px 1fr 56px 0fr; }
       .main .experience .experience__content .event-3 {
-        grid-template-rows: 40px 0fr 40px 0fr 40px 1fr; } }
+        grid-template-rows: 56px 0fr 56px 0fr 56px 1fr; } }
     .main .experience .experience__content .content__cards {
       display: grid;
       grid-template-areas: "date1 exp" "date2 exp" "date3 exp";
       transition: 1000ms ease; }
-      @media (min-width: 736px) {
+      @media (min-width: 768px) {
         .main .experience .experience__content .content__cards {
           column-gap: 32px; } }
-      @media (max-width: 736px) {
+      @media (max-width: 767px) {
         .main .experience .experience__content .content__cards {
           grid-template-areas: "date1" "exp1" "date2" "exp2" "date3" "exp3"; } }
       .main .experience .experience__content .content__cards .dates__text {
@@ -349,17 +440,14 @@ h3 {
         display: flex;
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
         z-index: 1;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        padding-left: 32px;
-        padding-right: 32px; }
+        padding: 16px 32px; }
         .main .experience .experience__content .content__cards .dates__text:first-child {
           border-top-left-radius: 12px;
           border-top-right-radius: 12px; }
         .main .experience .experience__content .content__cards .dates__text:nth-child(3) {
           border-bottom-left-radius: 12px;
           border-bottom-right-radius: 12px; }
-        @media (max-width: 736px) {
+        @media (max-width: 767px) {
           .main .experience .experience__content .content__cards .dates__text:nth-child(1) {
             grid-area: date1; }
           .main .experience .experience__content .content__cards .dates__text:nth-child(2) {
@@ -371,7 +459,7 @@ h3 {
           align-self: center; }
         .main .experience .experience__content .content__cards .dates__text .text__button--active {
           color: #030712; }
-      @media (max-width: 736px) {
+      @media (max-width: 767px) {
         .main .experience .experience__content .content__cards .card__1 {
           grid-area: exp1; }
         .main .experience .experience__content .content__cards .card__2 {
@@ -380,18 +468,18 @@ h3 {
           grid-area: exp3; } }
       .main .experience .experience__content .content__cards .active {
         transform: translateX(0); }
-        @media (max-width: 736px) {
+        @media (max-width: 767px) {
           .main .experience .experience__content .content__cards .active {
             transform: unset; } }
       .main .experience .experience__content .content__cards .inactive-right {
         transform: translateX(150%); }
-        @media (max-width: 736px) {
+        @media (max-width: 767px) {
           .main .experience .experience__content .content__cards .inactive-right {
             transform: unset;
             display: none; } }
       .main .experience .experience__content .content__cards .inactive-left {
         transform: translateX(150%); }
-        @media (max-width: 736px) {
+        @media (max-width: 767px) {
           .main .experience .experience__content .content__cards .inactive-left {
             transform: unset; } }
       .main .experience .experience__content .content__cards .cards__experience {
@@ -402,21 +490,19 @@ h3 {
         display: flex;
         flex-direction: row;
         gap: 48px;
-        padding-top: 32px;
-        padding-bottom: 32px;
-        padding-left: 32px;
-        padding-right: 32px;
+        padding: 32px;
+        z-index: 1;
         max-height: 236px; }
-        @media (max-width: 736px) {
+        @media (max-width: 767px) {
           .main .experience .experience__content .content__cards .cards__experience {
             padding: 0; }
             .main .experience .experience__content .content__cards .cards__experience .experience__img {
               margin-top: 32px;
               margin-left: 32px; } }
-        @media (min-width: 736px) {
+        @media (min-width: 768px) {
           .main .experience .experience__content .content__cards .cards__experience {
             grid-area: exp; } }
-        @media (max-width: 736px) {
+        @media (max-width: 767px) {
           .main .experience .experience__content .content__cards .cards__experience {
             flex-direction: column;
             gap: 24px; } }
@@ -426,7 +512,7 @@ h3 {
           display: flex;
           flex-direction: column;
           gap: 16px; }
-          @media (max-width: 736px) {
+          @media (max-width: 767px) {
             .main .experience .experience__content .content__cards .cards__experience .experience__info {
               margin-left: 32px; } }
           .main .experience .experience__content .content__cards .cards__experience .experience__info .info__prof {
@@ -462,6 +548,14 @@ h3 {
 .works {
   padding-top: 96px;
   padding-bottom: 96px; }
+  @media (max-width: 1023px) {
+    .works {
+      padding-top: 64px;
+      padding-bottom: 64px; } }
+  @media (max-width: 767px) {
+    .works {
+      padding-top: 32px;
+      padding-bottom: 32px; } }
   .works .works__content {
     display: flex;
     flex-direction: column;
@@ -485,16 +579,22 @@ h3 {
       align-self: center;
       max-width: 1152px;
       border-radius: 12px; }
+      @media (max-width: 768px) {
+        .works .works__content .content__card {
+          flex-direction: column; } }
       .works .works__content .content__card .card__image {
         display: flex;
         justify-content: center;
         align-items: center;
         background: #F9FAFB;
         border-right: 1px solid #F3F4F6;
-        padding: 48px; }
+        padding: 48px;
+        height: 480px; }
+        @media (max-width: 767px) {
+          .works .works__content .content__card .card__image {
+            display: none; } }
         .works .works__content .content__card .card__image img {
-          max-width: 480px;
-          height: 100%; }
+          max-width: 100%; }
       .works .works__content .content__card .card__content {
         padding: 48px; }
         .works .works__content .content__card .card__content .wrapper {
@@ -524,6 +624,14 @@ h3 {
 .testimonials {
   padding-top: 96px;
   padding-bottom: 96px; }
+  @media (max-width: 1023px) {
+    .testimonials {
+      padding-top: 64px;
+      padding-bottom: 64px; } }
+  @media (max-width: 767px) {
+    .testimonials {
+      padding-top: 32px;
+      padding-bottom: 32px; } }
   .testimonials .testimonials__content {
     display: flex;
     flex-direction: column;
@@ -543,13 +651,29 @@ h3 {
     display: flex;
     align-items: flex-start;
     gap: 32px; }
+    @media (max-width: 1023px) {
+      .testimonials .content__cards {
+        flex-direction: column; } }
     .testimonials .content__cards .cards__trio {
       display: flex;
       flex-direction: column;
       gap: 28px; }
+      @media (max-width: 1023px) {
+        .testimonials .content__cards .cards__trio {
+          flex-direction: row;
+          gap: 32px; } }
+      @media (max-width: 767px) {
+        .testimonials .content__cards .cards__trio {
+          flex-direction: column; } }
     .testimonials .content__cards .cards__duo {
       display: flex;
       gap: 48px; }
+      @media (max-width: 1023px) {
+        .testimonials .content__cards .cards__duo {
+          gap: 32px; } }
+      @media (max-width: 767px) {
+        .testimonials .content__cards .cards__duo {
+          flex-direction: column; } }
     .testimonials .content__cards .testimonial__card {
       padding: 32px;
       display: flex;
@@ -588,6 +712,14 @@ h3 {
 .getInTouch {
   padding-top: 96px;
   padding-bottom: 96px; }
+  @media (max-width: 1023px) {
+    .getInTouch {
+      padding-top: 64px;
+      padding-bottom: 64px; } }
+  @media (max-width: 767px) {
+    .getInTouch {
+      padding-top: 32px;
+      padding-bottom: 32px; } }
   .getInTouch .getInTouch__content {
     display: flex;
     flex-direction: column;

@@ -8,7 +8,16 @@
     align-items: center;
     gap: 48px;
     position: relative;
-    @include vertical-padding(0px, 96px);
+    padding-bottom: 96px;
+    padding-top: 96px;
+    @media (max-width: 1023px) {
+      padding-bottom: 64px;
+      padding-top: 64px;
+    }
+    @media (max-width: 767px) {
+      padding-bottom: 32px;
+      padding-top: 32px;
+    }
     .skills__text {
       display: flex;
       flex-direction: column;
@@ -21,20 +30,30 @@
       .text__p {
         color: $gray-600;
         font-weight: 400;
+        text-align: center;
       }
     }
     .skills__icons {
       display: flex;
       justify-content: space-between;
-      width: 720px;
+      width: 100%;
+      max-width: 720px;
       @media (max-width: 768px) {
-        width: 640px;
+        max-width: 480px;
       }
       .icons__container {
         display: flex;
         flex-direction: column;
         gap: 8px;
         align-items: center;
+        @media (max-width: 767px) {
+          &:nth-child(4) {
+            display: none;
+          }
+          &:nth-child(5) {
+            display: none;
+          }
+        }
       }
     }
     .skills__orange {
@@ -50,6 +69,9 @@
       @media (max-width: 768px) {
         width: 82.133px;
         height: 159.789px;
+      }
+      @media (max-width: 767px) {
+        display: none;
       }
     }
   }

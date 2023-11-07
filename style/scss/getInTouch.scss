@@ -4,6 +4,14 @@
 .getInTouch {
   padding-top: 96px;
   padding-bottom: 96px;
+  @media (max-width: 1023px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
   .getInTouch__content {
     display: flex;
     flex-direction: column;

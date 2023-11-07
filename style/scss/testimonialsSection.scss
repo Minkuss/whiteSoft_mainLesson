@@ -4,6 +4,14 @@
 .testimonials {
   padding-top: 96px;
   padding-bottom: 96px;
+  @media (max-width: 1023px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
   .testimonials__content {
     display: flex;
     flex-direction: column;
@@ -27,14 +35,30 @@
     display: flex;
     align-items: flex-start;
     gap: 32px;
+    @media (max-width: 1023px) {
+      flex-direction: column;
+    }
     .cards__trio {
       display: flex;
       flex-direction: column;
       gap: 28px;
+      @media (max-width: 1023px) {
+        flex-direction: row;
+        gap: 32px;
+      }
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
     }
     .cards__duo {
       display: flex;
       gap: 48px;
+      @media (max-width: 1023px) {
+        gap: 32px;
+      }
+      @media (max-width: 767px) {
+        flex-direction: column;
+      }
     }
     .testimonial__card {
       padding: 32px;

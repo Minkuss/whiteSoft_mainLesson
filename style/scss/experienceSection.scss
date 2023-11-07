@@ -5,8 +5,17 @@
   .experience {
     overflow-x: hidden;
     background: $gray-50;
-    @include vertical-padding(96px, 96px);
+    padding-top: 96px;
+    padding-bottom: 96px;
     position: relative;
+    @media (max-width: 1023px) {
+      padding-top: 64px;
+      padding-bottom: 64px;
+    }
+    @media (max-width: 767px) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
     &::before {
       content: "";
       width: 262px;
@@ -17,6 +26,9 @@
       background-repeat: no-repeat;
       bottom: 0;
       left: 0;
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
     &::after {
       content: "";
@@ -28,13 +40,21 @@
       background-repeat: no-repeat;
       bottom: 0;
       right: 0;
+      @media (max-width: 767px) {
+        display: none;
+      }
     }
     .experience__content {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 48px;
-      @include horizontal-padding(32px, 32px);
+      padding-left: 32px;
+      padding-right: 32px;
+      @media (max-width: 1023px) {
+        padding-left: 0;
+        padding-right: 0;
+      }
       .content__text {
         display: flex;
         flex-direction: column;
@@ -50,15 +70,15 @@
         }
       }
 
-      @media (max-width: 736px) {
+      @media (max-width: 767px) {
         .event-1 {
-          grid-template-rows: 40px 1fr 40px 0fr 40px 0fr;
+          grid-template-rows: 56px 1fr 56px 0fr 56px 0fr;
         }
         .event-2 {
-          grid-template-rows: 40px 0fr 40px 1fr 40px 0fr;
+          grid-template-rows: 56px 0fr 56px 1fr 56px 0fr;
         }
         .event-3 {
-          grid-template-rows: 40px 0fr 40px 0fr 40px 1fr;
+          grid-template-rows: 56px 0fr 56px 0fr 56px 1fr;
         }
       }
 
@@ -69,11 +89,11 @@
         "date2 exp"
         "date3 exp"
         ;
-        @media (min-width: 736px) {
+        @media (min-width: 768px) {
           column-gap: 32px;
         }
         transition: 1000ms ease;
-        @media (max-width: 736px) {
+        @media (max-width: 767px) {
           grid-template-areas: 
           "date1"
           "exp1"
@@ -95,9 +115,8 @@
               border-bottom-right-radius: 12px;
             }
             z-index: 1;
-              @include vertical-padding(16px, 16px);
-              @include horizontal-padding(32px, 32px);
-              @media (max-width: 736px) {
+              padding: 16px 32px;
+              @media (max-width: 767px) {
                 &:nth-child(1) {
                   grid-area: date1;
                 }
@@ -116,7 +135,7 @@
                 color: $gray-950;
               }
           }
-          @media (max-width: 736px) {
+          @media (max-width: 767px) {
             .card__1 {
               grid-area: exp1;
             }
@@ -130,20 +149,20 @@
 
           .active {
             transform: translateX(0);
-            @media (max-width: 736px) {
+            @media (max-width: 767px) {
               transform: unset;
             }
           }
           .inactive-right {
             transform: translateX(150%);
-            @media (max-width: 736px) {
+            @media (max-width: 767px) {
               transform: unset;
               display: none;
             }
           }
           .inactive-left {
             transform: translateX(150%);
-            @media (max-width: 736px) {
+            @media (max-width: 767px) {
               transform: unset;
             }
           }
@@ -156,9 +175,9 @@
             display: flex;
             flex-direction: row;
             gap: 48px;
-            @include vertical-padding(32px, 32px);
-            @include horizontal-padding(32px, 32px);
-            @media (max-width: 736px) {
+            padding: 32px;
+            z-index: 1;
+            @media (max-width: 767px) {
               padding: 0;
               .experience__img {
                 margin-top: 32px;
@@ -166,10 +185,10 @@
               }
             }
 
-            @media (min-width: 736px) {
+            @media (min-width: 768px) {
               grid-area: exp;
             }
-            @media (max-width: 736px) {
+            @media (max-width: 767px) {
               flex-direction: column;
               gap: 24px;
             }
@@ -181,7 +200,7 @@
               display: flex;
               flex-direction: column;
               gap: 16px;
-              @media (max-width: 736px) {
+              @media (max-width: 767px) {
                 margin-left: 32px;
               }
               .info__prof {
