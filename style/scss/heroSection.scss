@@ -1,10 +1,19 @@
 @import "./colors.scss";
 @import "./paddings.scss";
 
-.main {
-  .wrapper {
+// @keyframes fruitAnimation {
+//   0% {
+//       transform: translateX(-100%);
+//   }
+//   50% {
+//       transform: translateX(50%) translateY(-50px);
+//   }
+//   100% {
+//       transform: translateX(500%);
+//   }
+// }
 
-  }
+.main {
   .hero {
     padding-top: 96px;
     padding-bottom: 120px;
@@ -12,7 +21,18 @@
     url("../../assets/images/orange.svg"),
     url("../../assets/images/wave2.svg");
     background-repeat: no-repeat;
-    background-position: bottom, left 30% bottom, bottom;
+    background-position: bottom, left 20% bottom, bottom;
+    position: relative;
+    // &::before {
+    //   content: "";
+    //   position: absolute;
+    //   background-image: url("../../assets/images/orange.svg");
+    //   background-position: 0 0 ;
+    //   width: 120px;
+    //   height: 85px;
+    //   bottom: 0;
+    //   animation: fruitAnimation 5s linear infinite;
+    // }
     @media (max-width: 767px) {
       padding-top: 32px;
     }

@@ -89,9 +89,7 @@
         "date2 exp"
         "date3 exp"
         ;
-        @media (min-width: 768px) {
-          column-gap: 32px;
-        }
+        column-gap: 32px;
         transition: 1000ms ease;
         @media (max-width: 767px) {
           grid-template-areas: 
@@ -101,10 +99,12 @@
           "exp2"
           "date3"
           "exp3";
+          max-width: 520px;
         }
           .dates__text {
             background: $gray-default;
             display: flex;
+            z-index: 1;
             box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
             &:first-child {
               border-top-left-radius: 12px;
@@ -119,12 +119,17 @@
               @media (max-width: 767px) {
                 &:nth-child(1) {
                   grid-area: date1;
+                  border-radius: 12px 12px 0 0 ;
                 }
                 &:nth-child(2) {
                   grid-area: date2;
                 }
                 &:nth-child(3) {
                   grid-area: date3;
+                  border-radius: 0 0 12px 12px ;
+                }
+                &:not(:last-child) {
+                  border-bottom: 1px solid $gray-200;
                 }
               }
               .text__button {
@@ -151,10 +156,12 @@
             transform: translateX(0);
             @media (max-width: 767px) {
               transform: unset;
+              padding: 32px !important;
             }
           }
           .inactive-right {
             transform: translateX(150%);
+            opacity: 0;
             @media (max-width: 767px) {
               transform: unset;
               display: none;
@@ -162,6 +169,7 @@
           }
           .inactive-left {
             transform: translateX(150%);
+            opacity: 0;
             @media (max-width: 767px) {
               transform: unset;
             }
@@ -176,18 +184,14 @@
             flex-direction: row;
             gap: 48px;
             padding: 32px;
-            z-index: 1;
+            z-index: 2;
             @media (max-width: 767px) {
               padding: 0;
-              .experience__img {
-                margin-top: 32px;
-                margin-left: 32px;
-              }
+              grid-area: unset;
+              border-radius: 0 0 12px 12px;
+              max-height: 330px;
             }
-
-            @media (min-width: 768px) {
-              grid-area: exp;
-            }
+            grid-area: exp;
             @media (max-width: 767px) {
               flex-direction: column;
               gap: 24px;
@@ -200,9 +204,6 @@
               display: flex;
               flex-direction: column;
               gap: 16px;
-              @media (max-width: 767px) {
-                margin-left: 32px;
-              }
               .info__prof {
                 color: $gray-900;
                 font-weight: 600;
@@ -211,7 +212,8 @@
                 display: flex;
                 flex-direction: column;
                 gap: 16px;
-                overflow-y: auto;
+                max-height: 128px;
+                overflow-y: scroll;
                 &::-webkit-scrollbar {
                   width: 4px;
                 }
