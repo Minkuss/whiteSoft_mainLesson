@@ -3,12 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
     <script src="./js/experienceAnim.js"></script>
     <script src="./js/worksCardLoad.js"></script>
     <link rel="stylesheet" href="./style/css/main.css" />
@@ -24,10 +18,10 @@
           alt="Capibara.com"
         />
         <div class="nav__links body2">
-          <a class="links" href="#">Experience</a
-          ><a class="links" href="#">Work</a
-          ><a class="links" href="#">Testimonials</a
-          ><a class="links" href="#">Contact</a>
+          <a class="links" href="#experience">Experience</a
+          ><a class="links" href="#works">Work</a
+          ><a class="links" href="#testimonials">Testimonials</a
+          ><a class="links" href="#getInTouch">Contact</a>
           <div class="divider"></div>
         </div>
         <div class="nav__burger" id="navBurger">
@@ -37,29 +31,23 @@
     </header>
     <main class="main">
       <!-- HERO SECTION----------------------------------------------------------->
-      <section class="hero container">
+      <section id="hero" class="hero container">
         <div class="hero__info">
-          <div class="info__column">
-            <img
-              class="info__img--mob"
-              src="./assets/images/hero_img.png"
-              alt="Capybara"
-            />
-            <div class="column__content">
-              <h1 class="content__h1">Hi, I’m Capybarara&nbsp;👋</h1>
-              <p class="content__p body2">
-                Known for its adorable appearance and friendly nature, the
-                Capybarara is now embarking on a journey to find a new job.
-                Motivated by the desire to explore new opportunities and
-                challenges, the Capybarara is determined to utilize its unique
-                skills and traits to secure a fulfilling position!
-              </p>
-            </div>
-            <a href="#getInTouch" class="column__btn button subtitle">
-              I wanna employ you!!!!
-            </a>
+          <div class="column__content">
+            <h1 class="content__h1 heading--1">Hi, I’m Capybarara&nbsp;👋</h1>
+            <p class="content__p body2">
+              Known for its adorable appearance and friendly nature, the
+              Capybarara is now embarking on a journey to find a new job.
+              Motivated by the desire to explore new opportunities and
+              challenges, the Capybarara is determined to utilize its unique
+              skills and traits to secure a fulfilling position!
+            </p>
           </div>
+          <a href="#getInTouch" class="column__btn button subtitle">
+            I wanna employ you!!!!
+          </a>
           <img
+            loading="lazy"
             class="info__img"
             src="./assets/images/hero_img.png"
             alt="Capybara"
@@ -68,43 +56,67 @@
       </section>
 
       <!-- SKILLS SECTION-------------------------------------------------------------->
-      <section class="skills container">
+      <section id="skills" class="skills container">
         <div class="skills__text">
-          <h1 class="text__h1">Skills</h1>
+          <h2 class="text__heading heading--1">Skills</h2>
           <p class="text__p subtitle">
             The skills, tools and technologies Capybarara really good at:
           </p>
         </div>
         <div class="skills__icons">
           <div class="icons__container">
-            <img src="./assets/images/icons_js.svg" alt="Javascript" />
+            <img
+              loading="lazy"
+              src="./assets/images/icons_js.svg"
+              alt="Javascript"
+            />
             <span class="body1">Javascript</span>
           </div>
           <div class="icons__container">
-            <img src="./assets/images/icons_ts.svg" alt="Typescript" />
+            <img
+              loading="lazy"
+              src="./assets/images/icons_ts.svg"
+              alt="Typescript"
+            />
             <span class="body1">Typescript</span>
           </div>
           <div class="icons__container">
-            <img src="./assets/images/icons_react.svg" alt="React" />
+            <img
+              loading="lazy"
+              src="./assets/images/icons_react.svg"
+              alt="React"
+            />
             <span class="body1">React</span>
           </div>
           <div class="icons__container">
-            <img src="./assets/images/icons_next.svg" alt="Next.js" />
+            <img
+              loading="lazy"
+              src="./assets/images/icons_next.svg"
+              alt="Next.js"
+            />
             <span class="body1">Next.js</span>
           </div>
           <div class="icons__container">
-            <img src="./assets/images/icons_node.svg" alt="Node" />
+            <img
+              loading="lazy"
+              src="./assets/images/icons_node.svg"
+              alt="Node"
+            />
             <span class="body1">Node.js</span>
           </div>
         </div>
-        <img class="skills__orange" src="./assets/images/orange_skills.png" />
+        <img
+          loading="lazy"
+          class="skills__orange"
+          src="./assets/images/orange_skills.png"
+        />
       </section>
 
       <!-- EXPERIENCE SECTION ------------------------------------------------------------->
-      <section class="experience container">
+      <section id="experience" class="experience container">
         <div class="experience__content">
           <div class="content__text">
-            <h1 class="text__h1">Experience</h1>
+            <h2 class="text__heading heading--1">Experience</h2>
             <p class="text__p subtitle">
               Here is a quick summary of Capibarara most recent experiences:
             </p>
@@ -112,7 +124,7 @@
 
           <!-- Cards block--------------------------------------------------------------->
           <div class="content__cards event-1">
-            <div class="dates__text">
+            <div data-order="1" class="dates__text">
               <button
                 data-order="1"
                 class="text__button text__button--active body2"
@@ -120,12 +132,12 @@
                 May 2020 - Present
               </button>
             </div>
-            <div class="dates__text">
+            <div data-order="2" class="dates__text">
               <button data-order="2" class="text__button body2">
                 Dec 2019 - May 2020
               </button>
             </div>
-            <div class="dates__text">
+            <div data-order="3" class="dates__text">
               <button data-order="3" class="text__button body2">
                 May 2019 - Dec 2019
               </button>
@@ -137,6 +149,7 @@
               class="cards__experience card__1 active shadow--md"
             >
               <img
+                loading="lazy"
                 class="experience__img"
                 src="./assets/images/ws_logo.svg"
                 alt="White soft"
@@ -172,6 +185,7 @@
               class="cards__experience card__2 inactive-right shadow--md"
             >
               <img
+                loading="lazy"
                 class="experience__img"
                 src="./assets/images/ws_logo.svg"
                 alt="White soft"
@@ -202,6 +216,7 @@
               class="cards__experience card__3 inactive-right shadow--md"
             >
               <img
+                loading="lazy"
                 class="experience__img"
                 src="./assets/images/ws_logo.svg"
                 alt="White soft"
@@ -222,10 +237,10 @@
       </section>
 
       <!-- WORKS SECTION-------------------------------------------------------------------->
-      <section class="works container">
+      <section id="works" class="works container">
         <div id="works__content" class="works__content">
           <div class="content__text">
-            <h1 class="text__h1">Work</h1>
+            <h2 class="text__heading heading--1">Work</h2>
             <p class="text__p subtitle">
               Some of the noteworthy projects Capibarara have built:
             </p>
@@ -234,10 +249,10 @@
       </section>
 
       <!-- TESTIMONIALS SECTION-------------------------------------------------------------->
-      <section class="testimonials container">
+      <section id="testimonials" class="testimonials container">
         <div class="testimonials__content">
           <div class="content__text">
-            <h1 class="text__h1">Testimonials</h1>
+            <h2 class="text__heading heading--1">Testimonials</h2>
             <p class="text__p subtitle">
               Nice things people have said about me:
             </p>
@@ -246,11 +261,12 @@
             <div class="testimonial__card shadow--md">
               <div class="card__heading">
                 <img
+                  loading="lazy"
                   class="card__logo"
                   src="./assets/images/sarah__testimonial.png"
                 />
                 <div class="card__details">
-                  <h3 class="details__h3">Sarah</h3>
+                  <h3 class="details__h3 heading--3">Sarah</h3>
                   <span class="details__span subtitle">Frontend Developer</span>
                 </div>
               </div>
@@ -327,7 +343,7 @@
       <section id="getInTouch" class="getInTouch container">
         <div class="getInTouch__content">
           <div class="content__text">
-            <h1 class="text__h1">Get in touch</h1>
+            <h2 class="text__heading heading--1">Get in touch</h2>
             <p class="text__p subtitle">
               What’s next? Feel free to reach out to Capibarara if you're
               looking for a developer, have a query, or simply want to connect.
@@ -335,13 +351,25 @@
           </div>
           <div class="content__contacts">
             <div class="contacts__mail">
-              <img class="mail__icon" src="./assets/images/mail.svg" />
-              <h2 class="mail__text">capibarara@gmail.com</h2>
+              <img
+                loading="lazy"
+                class="mail__icon"
+                src="./assets/images/mail.svg"
+              />
+              <a href="mailto:capibarara@gmail.co"
+                ><span class="mail__text heading--2"
+                  >capibarara@gmail.com</span
+                ></a
+              >
             </div>
             <div class="contacts__phone">
-              <img class="phone__icon" src="./assets/images/phone.svg" />
+              <img
+                loading="lazy"
+                class="phone__icon"
+                src="./assets/images/phone.svg"
+              />
               <a href="tel:+88002005920"
-                ><h2 class="phone__text">+8 800 200-59-20</h2></a
+                ><span class="phone__text heading--2">+8 800 200-59-20</span></a
               >
             </div>
           </div>

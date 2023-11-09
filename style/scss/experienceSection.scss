@@ -60,7 +60,7 @@
         flex-direction: column;
         align-items: center;
         gap: 16px;
-        .text__h1 {
+        .text__heading {
           color: $orange-500;
           font-weight: 700;
         }
@@ -90,7 +90,7 @@
         "date3 exp"
         ;
         column-gap: 32px;
-        transition: 1000ms ease;
+        transition: 700ms ease;
         @media (max-width: 767px) {
           grid-template-areas: 
           "date1"
@@ -101,44 +101,49 @@
           "exp3";
           max-width: 520px;
         }
-          .dates__text {
-            background: $gray-default;
-            display: flex;
-            z-index: 1;
-            box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
-            &:first-child {
-              border-top-left-radius: 12px;
-              border-top-right-radius: 12px;
+        .dates__text {
+          background: $gray-default;
+          display: flex;
+          z-index: 1;
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
+          &:first-child {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+          }
+          &:nth-child(3) {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+          }
+          padding: 16px 32px;
+          @media (max-width: 767px) {
+            &:nth-child(1) {
+                grid-area: date1;
+                border-radius: 12px 12px 0 0 ;
+              }
+              &:nth-child(2) {
+                grid-area: date2;
+              }
+              &:nth-child(3) {
+                grid-area: date3;
+                border-radius: 0 0 12px 12px ;
+              }
+              &:not(:last-child) {
+                border-bottom: 1px solid $gray-200;
+              }
+          }
+          .text__button {
+            color: $gray-500;
+            align-self: center;
+            width: 100%;
+          }
+          .text__button--active {
+            color: $gray-950;
+          }
+          }
+          .dates__text--active {
+            @media (max-width: 767px) {
+              border-radius: 0 !important;
             }
-            &:nth-child(3) {
-              border-bottom-left-radius: 12px;
-              border-bottom-right-radius: 12px;
-            }
-            z-index: 1;
-              padding: 16px 32px;
-              @media (max-width: 767px) {
-                &:nth-child(1) {
-                  grid-area: date1;
-                  border-radius: 12px 12px 0 0 ;
-                }
-                &:nth-child(2) {
-                  grid-area: date2;
-                }
-                &:nth-child(3) {
-                  grid-area: date3;
-                  border-radius: 0 0 12px 12px ;
-                }
-                &:not(:last-child) {
-                  border-bottom: 1px solid $gray-200;
-                }
-              }
-              .text__button {
-                color: $gray-500;
-                align-self: center;
-              }
-              .text__button--active {
-                color: $gray-950;
-              }
           }
           @media (max-width: 767px) {
             .card__1 {
@@ -151,7 +156,6 @@
               grid-area: exp3;
             }
           }
-
           .active {
             transform: translateX(0);
             @media (max-width: 767px) {
@@ -174,10 +178,9 @@
               transform: unset;
             }
           }
-          
           .cards__experience {
             overflow: hidden;
-            transition: 1000ms ease;
+            transition: 500ms ease;
             background: $gray-default;
             border-radius: 12px;
             display: flex;

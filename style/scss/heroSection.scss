@@ -1,18 +1,6 @@
 @import "./colors.scss";
 @import "./paddings.scss";
 
-// @keyframes fruitAnimation {
-//   0% {
-//       transform: translateX(-100%);
-//   }
-//   50% {
-//       transform: translateX(50%) translateY(-50px);
-//   }
-//   100% {
-//       transform: translateX(500%);
-//   }
-// }
-
 .main {
   .hero {
     padding-top: 96px;
@@ -23,115 +11,74 @@
     background-repeat: no-repeat;
     background-position: bottom, left 20% bottom, bottom;
     position: relative;
-    // &::before {
-    //   content: "";
-    //   position: absolute;
-    //   background-image: url("../../assets/images/orange.svg");
-    //   background-position: 0 0 ;
-    //   width: 120px;
-    //   height: 85px;
-    //   bottom: 0;
-    //   animation: fruitAnimation 5s linear infinite;
-    // }
     @media (max-width: 767px) {
       padding-top: 32px;
     }
     .hero__info {
-      display: flex;
+      display: grid;
+      grid-template-areas: "content img"
+      "btn img";
       justify-content: space-between;
-      align-items: center;
       max-width: 1200px;
       margin: 0 auto;
-
-      @media (max-width: 1023px) {
-        flex-direction: row-reverse;
+      gap: 48px;
+      @media (max-width: 767px) {
+        grid-template-areas: "content"
+        "img"
+        "btn" !important;
+        justify-items: center;
+        gap: 16px;
       }
-      .info__column { 
+      @media (max-width: 1023px) {
+        width: 100%;
+        justify-content: center;
+        grid-template-areas: "img content"
+        "img btn";
+        gap: 32px;
+      }
+      .column__content {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-end;
-        gap: 48px;
-        .info__img--mob {
-          display: none;
-          @media (max-width: 767px) {
-            display: block;
-            width: 320px;
-            height: 360px;
-            grid-area: img;
-          }
+        align-items: flex-start;
+        gap: 8px;
+        grid-area: content;
+        .content__h1 {
+          font-weight: 700;
         }
-        @media (max-width: 767px) {
-          display: grid;
-          grid-template-areas: "h1"
-          "img"
-          "btn";
-          justify-items: center;
-          gap: 16px !important;
-        }
-        @media (max-width: 1023px) {
-          gap: 32px;
-          width: 100%;
-        }
-        .column__content {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: flex-start;
-          gap: 8px;
-          .content__h1 {
-            font-weight: 700;
-            @media (max-width: 767px) {
-              grid-area: h1;
-            }
-          }
-          .content__p {
-            max-width: 768px;
-            color: $gray-600;
-            @media (max-width: 1023px) {
-              display: none;
-            }
-          }
-        }
-        .column__btn {
-          text-transform: uppercase;
-          font-weight: 600;
+        .content__p {
+          max-width: 768px;
+          color: $gray-600;
           @media (max-width: 1023px) {
-            align-self: center;
-            font-weight: 400;
-          }
-          @media (max-width: 767px) {
-            grid-area: btn;
+            display: none;
           }
         }
       }
-      .info__img {
-        width: 320px;
-        height: 360px;
+      .column__btn {
+        text-transform: uppercase;
+        font-weight: 600;
+        grid-area: btn;
+        justify-self: end;
+        width: fit-content;
+        height: fit-content;
+        @media (max-width: 1023px) {
+          justify-self: center;
+          font-weight: 400;
+        }
+        @media (max-width: 768px) {
+          margin: 0 -20px;
+        }
         @media (max-width: 767px) {
-          display: none;
+          font-weight: 600;
+          margin: 0;
         }
       }
-      .info__bottom {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-      }
-      .wave1 {
-        z-index: 1;
-      }
-      .wave1, .wave2 {
-        width: 100%;
-      }
-      .orange1 {
-        transform: rotate(-50.031deg);
-        // left: 219.82px;
-        left: 20%;
-      }
-      .orange2 {
-        // left: 280.82px;
-        left: 25%;
-      }
+
+    .info__img {
+      width: 320px;
+      height: 360px;
+      grid-area: img;
+    }
     }
   }
 }

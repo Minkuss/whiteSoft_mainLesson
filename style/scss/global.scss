@@ -1,8 +1,16 @@
 @import "./paddings.scss";
 @import "./colors.scss";
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   @include horizontal-padding(80px, 80px);
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
   @media (max-width: 1023px) {
     @include horizontal-padding(64px, 64px);
   }

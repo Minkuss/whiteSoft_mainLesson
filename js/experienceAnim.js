@@ -1,18 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
   const buttons = document.querySelectorAll(".text__button");
+  const btnsContainers = document.querySelectorAll(".dates__text");
   let prev = 1;
   
   buttons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const clickedButton = event.currentTarget;
       const order = Number(clickedButton.getAttribute("data-order"));
+      const buttonContainer = document.querySelector(`div[data-order = '${order}']`);
       const experienceCards = document.querySelectorAll(".cards__experience");
   
       experienceCards.forEach((card) => {
         const cardOrder = Number(card.getAttribute("data-order"));
-  
-        console.log(`order: ${order}`);
-        console.log(`cardOrder: ${cardOrder}`);
   
         card.className =
           order === cardOrder
@@ -29,7 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
       buttons.forEach((button) => {
         button.classList.remove("text__button--active");
       });
+      btnsContainers.forEach((container) => {
+        container.classList.remove("dates__text--active");
+      })
       clickedButton.classList.add("text__button--active");
+      buttonContainer.classList.add("dates__text--active");
   
       prev = order;
     });
