@@ -669,7 +669,6 @@ body {
       gap: 24px;
       border-radius: 12px;
       align-self: stretch;
-      max-height: 364px;
       background: #FFF; }
       .testimonials .content__cards .testimonial__card:nth-child(1) {
         grid-area: card1;
