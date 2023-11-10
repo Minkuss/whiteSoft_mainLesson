@@ -3,6 +3,7 @@
 @import "./breakpoints.scss";
 
 .testimonials {
+  background: $gray-50;
   .testimonials__content {
     display: flex;
     flex-direction: column;
@@ -48,6 +49,7 @@
       border-radius: 12px;
       align-self: stretch;
       max-height: 364px;
+      background: $gray-default;
       &:nth-child(1) {
         grid-area: card1;
         margin-right: -16px;

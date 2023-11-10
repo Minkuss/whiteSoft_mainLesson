@@ -3,6 +3,7 @@
 @import "./breakpoints.scss";
 
 .getInTouch {
+  background: $gray-50;
   .getInTouch__content {
     display: flex;
     flex-direction: column;
