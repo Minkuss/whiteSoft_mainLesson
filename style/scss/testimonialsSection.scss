@@ -1,17 +1,8 @@
 @import "./colors.scss";
 @import "./paddings.scss";
+@import "./breakpoints.scss";
 
 .testimonials {
-  padding-top: 96px;
-  padding-bottom: 96px;
-  @media (max-width: 1023px) {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  @media (max-width: 767px) {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
   .testimonials__content {
     display: flex;
     flex-direction: column;
@@ -22,11 +13,9 @@
       gap: 16px;
       align-items: center;
       .text__heading {
-        font-weight: 700;
         color: $orange-400;
       }
       .text__p {
-        font-weight: 400;
         color: $gray-600;
       }
     }
@@ -37,14 +26,14 @@
     grid-template-areas:"card1 card2 card2"
     "card1 card3 card4" ;
     gap: 28px 48px;
-    @media (max-width: 1023px) {
+    @media (max-width: $laptop) {
       grid-template-columns: 1fr 1fr 1fr;
       grid-template-areas: "card1 card1 card1"
       "card2 card3 card4";
       grid-template-rows: auto 204px;
       gap: 32px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: $mobile--big) {
       grid-template-areas: "card1"
       "card2"
       "card3"
@@ -62,7 +51,7 @@
       &:nth-child(1) {
         grid-area: card1;
         margin-right: -16px;
-        @media (max-width: 1023px) {
+        @media (max-width: $laptop) {
           margin: 0;
           max-height: none;
         }
@@ -86,20 +75,16 @@
           align-self: center;
           .details__parag {
             .name {
-              font-weight: 600;
               color: $gray-900;
             }
             .prof {
-              font-weight: 400;
               color: $gray-600;
             }
           }
           .details__h3 {
-            font-weight: 600;
             color: $gray-900;
           }
           .details__span {
-            font-weight: 400;
             color: $gray-600;
           }
         }
@@ -111,7 +96,6 @@
         -webkit-line-clamp: 3;
       }
       .card__info {
-        font-weight: 400;
         color: $gray-600;
       }
     }

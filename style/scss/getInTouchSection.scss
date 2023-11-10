@@ -1,22 +1,13 @@
 @import "./colors.scss";
 @import "./paddings.scss";
+@import "./breakpoints.scss";
 
 .getInTouch {
-  padding-top: 96px;
-  padding-bottom: 96px;
-  @media (max-width: 1023px) {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  @media (max-width: 767px) {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
   .getInTouch__content {
     display: flex;
     flex-direction: column;
     gap: 48px;
-    @media (max-width: 768px) {
+    @media (max-width: $tablet) {
       gap: 24px
     }
     .content__text {
@@ -25,11 +16,9 @@
       align-items: center;
       gap: 16px;
       .text__heading {
-        font-weight: 700;
         color: $gray-600;
       }
       .text__p {
-        font-weight: 400;
         color: $gray-600;
         max-width: 576px;
         text-align: center;
@@ -47,7 +36,6 @@
           align-self: center;
         }
         .mail__text {
-          font-weight: 600;
           color: $gray-600;
         }
       }
@@ -58,7 +46,6 @@
           align-self: center;
         }
         .phone__text {
-          font-weight: 600;
           color: $gray-600;
         }
       }

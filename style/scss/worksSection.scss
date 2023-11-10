@@ -1,17 +1,8 @@
 @import "./colors.scss";
 @import "./paddings.scss";
+@import "./breakpoints.scss";
 
 .works {
-  padding-top: 96px;
-  padding-bottom: 96px;
-  @media (max-width: 1023px) {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  @media (max-width: 767px) {
-    padding-top: 32px;
-    padding-bottom: 32px;
-  }
   .works__content {
     display: flex;
     flex-direction: column;
@@ -23,11 +14,9 @@
       align-items: center;
       gap: 16px;
       .text__heading {
-        font-weight: 700;
         color: $gray-600;
       }
       .text__p {
-        font-weight: 400;
         color: $gray-600;
       }
     }
@@ -39,7 +28,7 @@
       align-self: center;
       max-width: 1152px;
       border-radius: 12px;
-      @media (max-width: 768px) {
+      @media (max-width: $tablet) {
         flex-direction: column;
       }
       .card__image {
@@ -50,7 +39,7 @@
         border-right: 1px solid $gray-100;
         padding: 48px;
         height: 480px;
-        @media (max-width: 767px) {
+        @media (max-width: $mobile--big) {
           display: none;
         }
         & img {
@@ -65,11 +54,9 @@
           gap: 24px;
         }
         .card__heading {
-          font-weight: 600;
           color: $gray-900;
         }
         .card__info {
-          font-weight: 400;
           color: $gray-600;
         }
         .card__skills {
@@ -81,7 +68,6 @@
             background: $gray-200;
             border-radius: 12px;
             .tag__text {
-              font-weight: 500;
               color: $gray-600;
             }
           }

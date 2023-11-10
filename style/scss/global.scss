@@ -1,5 +1,6 @@
 @import "./paddings.scss";
 @import "./colors.scss";
+@import "./breakpoints.scss";
 
 body {
   display: flex;
@@ -8,14 +9,17 @@ body {
 
 .container {
   @include horizontal-padding(80px, 80px);
+  @include vertical-padding(96px, 96px);
   max-width: 1440px;
   margin: 0 auto;
   width: 100%;
-  @media (max-width: 1023px) {
+  @media (max-width: $laptop) {
     @include horizontal-padding(64px, 64px);
+    @include vertical-padding(64px, 64px);
   }
-  @media (max-width: 767px) {
+  @media (max-width: $mobile--big) {
     @include horizontal-padding(16px, 16px);
+    @include vertical-padding(32px, 32px);
   }
 }
 

@@ -27,12 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
   </div>
   <div class="card__content">
     <div class="wrapper">
-      <span class="card__heading subtitle">${data.card__heading}</span>
-      <p class="card__info body2">
+      <span class="card__heading subtitle--semi-bold">${data.card__heading}</span>
+      <p class="card__info body-2--normal">
       ${data.card__info}
       </p>
       <ul class="card__skills">
-      ${data.card__skills.map(skill => `<li class="skills__tag"><span class="tag__text body3">${skill}</span></li>`).join("")}
+      ${data.card__skills.map(skill => `<li class="skills__tag"><span class="tag__text body-3--medium">${skill}</span></li>`).join("")}
       </ul>
       <a href = ${data.href} class="card__icon icon__button"
         ><img src="./assets/images/link_ico.svg" alt="Ссылка"

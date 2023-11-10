@@ -1,5 +1,6 @@
 @import "./colors.scss";
 @import "./paddings.scss";
+@import "./breakpoints.scss";
 
 .main {
   .skills {
@@ -8,16 +9,6 @@
     align-items: center;
     gap: 48px;
     position: relative;
-    padding-bottom: 96px;
-    padding-top: 96px;
-    @media (max-width: 1023px) {
-      padding-bottom: 64px;
-      padding-top: 64px;
-    }
-    @media (max-width: 767px) {
-      padding-bottom: 32px;
-      padding-top: 32px;
-    }
     .skills__text {
       display: flex;
       flex-direction: column;
@@ -25,11 +16,9 @@
       gap: 16px;
       .text__heading {
         color: $gray-600;
-        font-weight: 700;
       }
       .text__p {
         color: $gray-600;
-        font-weight: 400;
       }
     }
     .skills__icons {
@@ -37,7 +26,7 @@
       justify-content: space-between;
       width: 100%;
       max-width: 720px;
-      @media (max-width: 768px) {
+      @media (max-width: $tablet) {
         max-width: 480px;
       }
       .icons__container {
@@ -45,7 +34,8 @@
         flex-direction: column;
         gap: 8px;
         align-items: center;
-        @media (max-width: 767px) {
+        z-index: 1;
+        @media (max-width: $mobile--big) {
           &:nth-child(4) {
             display: none;
           }
@@ -61,15 +51,15 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      @media (max-width: 1023px) {
+      @media (max-width: $laptop) {
         width: 109.404px;
         height: 159.789px;
       }
-      @media (max-width: 768px) {
+      @media (max-width: $tablet) {
         width: 82.133px;
         height: 159.789px;
       }
-      @media (max-width: 767px) {
+      @media (max-width: $mobile--big) {
         display: none;
       }
     }
