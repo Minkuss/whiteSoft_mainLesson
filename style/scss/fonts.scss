@@ -23,6 +23,7 @@ body {
   line-height: 72px;
   letter-spacing: -2%;
   @media (max-width: $tablet) {
+    text-align: center;
     font-size: 36px;
     line-height: 40px;
   }

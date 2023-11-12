@@ -39,6 +39,7 @@
         .mail__text {
           color: $gray-600;
         }
+
       }
       .contacts__phone {
         display: flex;
@@ -49,6 +50,12 @@
         .phone__text {
           color: $gray-600;
         }
+      }
+      .orange {
+        color: $orange-500;
+      }
+      .yellow {
+        color: $yellow-500;
       }
     }
   }

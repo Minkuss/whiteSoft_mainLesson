@@ -5,11 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="./js/experienceAnim.js"></script>
     <script src="./js/worksCardLoad.js"></script>
+    <script src="./js/burgerAppearance.js"></script>
+    <script src="./js/popup.js"></script>
+    <script src="./js/textColoring.js"></script>
+    <script src="./js/copyToClipboard.js"></script>
     <link rel="stylesheet" href="./style/css/main.css" />
     <title>Document</title>
   </head>
 
   <body>
+    <div class="popup" id="popup">
+      <button class="popup__close" id="popup__close">
+        <img src="./assets/images/burger_close.svg" />
+      </button>
+      <img src="./assets/images/popup_img.png" class="popup__img" />
+    </div>
     <header class="header container">
       <nav class="header__nav">
         <img
@@ -24,9 +34,30 @@
           ><a class="links" href="#getInTouch">Contact</a>
           <div class="divider"></div>
         </div>
-        <div class="nav__burger" id="navBurger">
+        <button class="nav__burger" id="navBurger--open">
           <img src="./assets/images/burger.svg" />
+        </button>
+        <div class="nav__links--burger shadow--2xl">
+          <div class="burger__heading">
+            <img
+              class="nav__img"
+              src="./assets/images/hero_logo.png"
+              alt="Capibara.com"
+            />
+            <button class="nav__burger" id="navBurger--close">
+              <img src="./assets/images/burger_close.svg" />
+            </button>
+          </div>
+          <div class="divider"></div>
+          <div class="burger__links">
+            <a class="links" href="#experience">Experience</a
+            ><a class="links" href="#works">Work</a
+            ><a class="links" href="#testimonials">Testimonials</a
+            ><a class="links" href="#getInTouch">Contact</a>
+          </div>
+          <div class="divider"></div>
         </div>
+        <div class="burger__overlay"></div>
       </nav>
     </header>
     <main class="main">
@@ -359,8 +390,8 @@
                 class="mail__icon"
                 src="./assets/images/mail.svg"
               />
-              <a href="mailto:capibarara@gmail.co"
-                ><span class="mail__text heading-2--semi-bold"
+              <a data-order="1" class="contacts__btn"
+                ><span class="mail__text heading-2--semi-bold" id="mail__text"
                   >capibarara@gmail.com</span
                 ></a
               >
@@ -371,8 +402,8 @@
                 class="phone__icon"
                 src="./assets/images/phone.svg"
               />
-              <a href="tel:+88002005920"
-                ><span class="phone__text heading-2--semi-bold"
+              <a data-order="2" class="contacts__btn"
+                ><span id="phone__text" class="phone__text heading-2--semi-bold"
                   >+8 800 200-59-20</span
                 ></a
               >
