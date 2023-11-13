@@ -1,0 +1,62 @@
+@import "./colors.scss";
+@import "./paddings.scss";
+@import "./breakpoints.scss";
+
+.getInTouch {
+  background: $gray-50;
+  .getInTouch__content {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    @media (max-width: $tablet) {
+      gap: 24px
+    }
+    .content__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      .text__heading {
+        color: $gray-600;
+      }
+      .text__p {
+        color: $gray-600;
+        max-width: 576px;
+        text-align: center;
+      }
+    }
+    .content__contacts {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      .contacts__mail {
+        display: flex;
+        gap: 8px;
+        .main__icon {
+          align-self: center;
+        }
+        .mail__text {
+          color: $gray-600;
+        }
+
+      }
+      .contacts__phone {
+        display: flex;
+        gap: 8px;
+        .phone__icon {
+          align-self: center;
+        }
+        .phone__text {
+          color: $gray-600;
+        }
+      }
+      .orange {
+        color: $orange-500;
+      }
+      .yellow {
+        color: $yellow-500;
+      }
+    }
+  }
+}

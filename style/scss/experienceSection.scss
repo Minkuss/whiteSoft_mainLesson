@@ -1,0 +1,239 @@
+@import "./colors.scss";
+@import "./paddings.scss";
+@import "./breakpoints.scss";
+
+.main {
+  .experience {
+    overflow-x: hidden;
+    background: $gray-50;
+    position: relative;
+    &::before {
+      content: "";
+      width: 262px;
+      height: 192px;
+      position: absolute;
+      background-image: url("../../assets/images/oranges1_exp.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      bottom: 0;
+      left: 0;
+      @media (max-width: $mobile--big) {
+        display: none;
+      }
+    }
+    &::after {
+      content: "";
+      width: 279px;
+      height: 158px;
+      position: absolute;
+      background-image: url("../../assets/images/oranges2_exp.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      bottom: 0;
+      right: 0;
+      @media (max-width: $mobile--big) {
+        display: none;
+      }
+    }
+    .experience__content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
+      padding-left: 32px;
+      padding-right: 32px;
+      @media (max-width: $laptop) {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .content__text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        .text__heading {
+          color: $orange-500;
+        }
+        .text__p {
+          color: $gray-600;
+        }
+      }
+
+      @media (max-width: $mobile--big) {
+        .event-1 {
+          grid-template-rows: 56px 1fr 56px 0fr 56px 0fr;
+        }
+        .event-2 {
+          grid-template-rows: 56px 0fr 56px 1fr 56px 0fr;
+        }
+        .event-3 {
+          grid-template-rows: 56px 0fr 56px 0fr 56px 1fr;
+        }
+      }
+
+      .content__cards {
+        display: grid;
+        grid-template-areas: 
+        "date1 exp"
+        "date2 exp"
+        "date3 exp"
+        ;
+        column-gap: 32px;
+        transition: 500ms ease;
+        @media (max-width: $mobile--big) {
+          grid-template-areas: 
+          "date1"
+          "exp1"
+          "date2"
+          "exp2"
+          "date3"
+          "exp3";
+          max-width: 520px;
+        }
+        .dates__text {
+          background: $gray-default;
+          display: flex;
+          z-index: 1;
+          box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.06), 0px 4px 3px 0px rgba(0, 0, 0, 0.07);
+          &:first-child {
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+          }
+          &:nth-child(3) {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+          }
+          padding: 16px 32px;
+          @media (max-width: $mobile--big) {
+            &:nth-child(1) {
+
+              grid-area: date1;
+              border-radius: 12px 12px 0 0 ;
+            }
+            &:nth-child(2) {
+              grid-area: date2;
+            }
+            &:nth-child(3) {
+              grid-area: date3;
+              border-radius: 0 0 12px 12px ;
+            }
+            &:not(:last-child) {
+              border-bottom: 1px solid $gray-200;
+            }
+          }
+          .text__button {
+            color: $gray-500;
+            align-self: center;
+            width: 100%;
+          }
+          .text__button--active {
+            color: $gray-950;
+          }
+        }
+        .dates__text--active {
+          @media (max-width: $mobile--big) {
+            border-radius: 0 !important;
+          }
+        }
+        @media (max-width: $mobile--big) {
+          .card__1 {
+            grid-area: exp1;
+          }
+          .card__2 {
+            grid-area: exp2;
+          }
+          .card__3 {
+            grid-area: exp3;
+          }
+        }
+        .active {
+          transform: translateX(0);
+          @media (max-width: $mobile--big) {
+            transform: unset;
+            padding: 32px !important;
+          }
+        }
+        .inactive-right {
+          transform: translateX(150%);
+          opacity: 0;
+          @media (max-width: $mobile--big) {
+            transform: unset;
+          }
+        }
+        .inactive-left {
+          transform: translateX(150%);
+          opacity: 0;
+          @media (max-width: $mobile--big) {
+            transform: unset;
+          }
+        }
+        .cards__experience {
+          overflow: hidden;
+          transition: 300ms ease;
+          background: $gray-default;
+          border-radius: 12px;
+          display: flex;
+          flex-direction: row;
+          gap: 48px;
+          padding: 32px;
+          z-index: 2;
+          grid-area: exp;
+          max-height: 236px;
+          @media (max-width: $mobile--big) {
+            padding: 0;
+            grid-area: unset;
+            border-radius: 0 0 12px 12px;
+            max-height: 330px;
+          }
+          @media (max-width: $mobile--big) {
+            flex-direction: column;
+            gap: 24px;
+          }
+          .experience__img {
+            align-self: flex-start;
+          }
+          .experience__info {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .info__prof {
+              color: $gray-900;
+            }
+            .info__ul {
+              display: flex;
+              flex-direction: column;
+              gap: 16px;
+              max-height: 128px;
+              overflow-y: scroll;
+              &::-webkit-scrollbar {
+                width: 4px;
+              }
+              &::-webkit-scrollbar-thumb {
+                background-color: $gray-300;
+                border: 1px solid $gray-300;
+                border-radius: 2px;
+              }
+              .ul__item {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                &::before {
+                  content: "";
+                  min-width: 6px;
+                  height: 6px;
+                  border-radius: 50%;
+                  background: $orange-500;
+                  align-self: flex-start;
+                  margin-top: 10px;
+                }
+                .item__span {
+                  color: $gray-600;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
