@@ -1,19 +1,21 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const id = [
-    "mail__text", "phone__text"
-  ]
+  const ids = ["mail__text", "phone__text"];
 
-  id.forEach(id => {
+  ids.forEach(id => {
     const textElement = document.getElementById(id);
-    const textContent = textElement.textContent;
-    const coloredText = [];
-  
-    for (let i = 0; i < textContent.length; i++) {
-      const colorClass = i % 2 === 0 ? 'orange' : 'yellow';
-      coloredText.push(`<span class="${colorClass}">${textContent[i]}</span>`);
-    }
-  
-    textElement.innerHTML = coloredText.join('');
+    const words = textElement.textContent.split(' ');
 
-  })
+    const coloredText = words.map(word => {
+      const coloredWord = [];
+
+      for (let i = 0; i < word.length; i++) {
+        const colorClass = i % 2 === 0 ? 'orange' : 'yellow';
+        coloredWord.push(`<span class="${colorClass}">${word[i]}</span>`);
+      }
+
+      return coloredWord.join('');      
+    });
+
+    textElement.innerHTML = coloredText.join(' ');
+  });
 });

@@ -79,7 +79,7 @@
         "date3 exp"
         ;
         column-gap: 32px;
-        transition: 700ms ease;
+        transition: 500ms ease;
         @media (max-width: $mobile--big) {
           grid-template-areas: 
           "date1"
@@ -158,7 +158,6 @@
           opacity: 0;
           @media (max-width: $mobile--big) {
             transform: unset;
-            display: none;
           }
         }
         .inactive-left {
@@ -170,7 +169,7 @@
         }
         .cards__experience {
           overflow: hidden;
-          transition: 500ms ease;
+          transition: 300ms ease;
           background: $gray-default;
           border-radius: 12px;
           display: flex;

@@ -493,7 +493,7 @@ body {
       display: grid;
       grid-template-areas: "date1 exp" "date2 exp" "date3 exp";
       column-gap: 32px;
-      transition: 700ms ease; }
+      transition: 500ms ease; }
       @media (max-width: 767px) {
         .main .experience .experience__content .content__cards {
           grid-template-areas: "date1" "exp1" "date2" "exp2" "date3" "exp3";
@@ -548,8 +548,7 @@ body {
         opacity: 0; }
         @media (max-width: 767px) {
           .main .experience .experience__content .content__cards .inactive-right {
-            transform: unset;
-            display: none; } }
+            transform: unset; } }
       .main .experience .experience__content .content__cards .inactive-left {
         transform: translateX(150%);
         opacity: 0; }
@@ -558,7 +557,7 @@ body {
             transform: unset; } }
       .main .experience .experience__content .content__cards .cards__experience {
         overflow: hidden;
-        transition: 500ms ease;
+        transition: 300ms ease;
         background: #FFF;
         border-radius: 12px;
         display: flex;
