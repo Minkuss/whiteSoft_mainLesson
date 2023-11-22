@@ -9,6 +9,7 @@
     <script src="./js/popup.js"></script>
     <script src="./js/textColoring.js"></script>
     <script src="./js/copyToClipboard.js"></script>
+    <script src="./js/validation.js"></script>
     <link rel="stylesheet" href="./style/css/main.css" />
     <title>Document</title>
   </head>
@@ -386,25 +387,41 @@
               <label for="subject" class="field__label body-3--normal"
                 >Subject*</label
               >
-              <input class="field__input" id="subject" type="text" />
+              <input
+                class="field__input input body-1--normal"
+                id="subject"
+                type="text"
+              />
             </div>
             <div class="field-wrapper">
               <label for="name" class="field__label body-3--normal"
                 >Name*</label
               >
-              <input class="field__input" id="name" type="text" />
+              <input
+                class="field__input input body-1--normal"
+                id="name"
+                type="text"
+              />
             </div>
             <div class="field-wrapper">
               <label for="phone" class="field__label body-3--normal"
                 >Phone*</label
               >
-              <input class="field__input" id="phone" type="tel" />
+              <input
+                class="field__input input body-1--normal"
+                id="phone"
+                type="tel"
+                placeholder="+7 ______-__-__"
+              />
             </div>
             <div class="field-wrapper">
               <label for="description" class="field__label body-3--normal"
-                >Subject*</label
+                >Description</label
               >
-              <textarea class="field__textarea" id="description"></textarea>
+              <textarea
+                class="field__textarea textarea body-1--normal"
+                id="description"
+              ></textarea>
             </div>
             <button type="submit" class="field__button button">Send it!</button>
           </form>
