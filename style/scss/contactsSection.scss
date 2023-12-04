@@ -1,0 +1,59 @@
+@import "./colors.scss";
+@import "./paddings.scss";
+@import "./breakpoints.scss";
+
+.contacts {
+  position: relative;
+  background-image: url('../../assets/images/parallax.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  .contacts__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    .content__text {
+      display: flex;
+      flex-direction: column;
+      gap:  16px;
+      align-items: center;
+      .text__heading {
+        color: $gray-600;
+      }
+      .text__p {
+        color: $gray-600;
+      }
+    }
+    .content__form {
+      padding: 48px;
+      max-width: 546px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 24px;
+      border-radius: 12px;
+      background: $gray-50;
+      .field-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        gap: 2px;
+        .field__label {
+          color: $gray-500;
+        }
+        .field__label--error {
+          color: $error;
+        }
+        .field__input {
+          height: 48px;
+        }
+        .field__textarea {
+          height: 160px;
+        }
+      }
+    }
+  }
+}

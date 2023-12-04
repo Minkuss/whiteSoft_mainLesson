@@ -112,6 +112,34 @@ body {
   .icon__button:active {
     background: #F4900C; }
 
+.input {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #6B7280;
+  background: #F9FAFB; }
+
+.input--error {
+  border: 1px solid #CC2828;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #F9FAFB; }
+
+.textarea {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 1px solid #6B7280;
+  background: #F9FAFB;
+  resize: none;
+  font-family: "Inter"; }
+
+.textarea--error {
+  border: 1px solid #CC2828;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: #F9FAFB;
+  resize: none;
+  font-family: "Inter"; }
+
 @font-face {
   font-family: 'Inter';
   src: url("../../assets/fonts/Inter/Inter-Regular.ttf"); }
@@ -807,5 +835,50 @@ body {
     padding: 6px;
     border-radius: 8px;
     align-self: flex-end; }
+
+.contacts {
+  position: relative;
+  background-image: url("../../assets/images/parallax.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover; }
+  .contacts .contacts__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center; }
+    .contacts .contacts__content .content__text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      align-items: center; }
+      .contacts .contacts__content .content__text .text__heading {
+        color: #4B5563; }
+      .contacts .contacts__content .content__text .text__p {
+        color: #4B5563; }
+    .contacts .contacts__content .content__form {
+      padding: 48px;
+      max-width: 546px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 24px;
+      border-radius: 12px;
+      background: #F9FAFB; }
+      .contacts .contacts__content .content__form .field-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
+        gap: 2px; }
+        .contacts .contacts__content .content__form .field-wrapper .field__label {
+          color: #6B7280; }
+        .contacts .contacts__content .content__form .field-wrapper .field__label--error {
+          color: #CC2828; }
+        .contacts .contacts__content .content__form .field-wrapper .field__input {
+          height: 48px; }
+        .contacts .contacts__content .content__form .field-wrapper .field__textarea {
+          height: 160px; }
 
 /*# sourceMappingURL=main.css.map */
