@@ -7,11 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   inputs.forEach((input) => {
     switch (input.id) {
       case "subject":
-        input.required = true;
-        break;
       case "name":
-        input.required = true;
-        break;
       case "phone":
         input.required = true;
         break;
@@ -42,14 +38,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function submitButton() {
     inputs.some((input) => {
-      if (input.value) {
-        console.log("false")
-        document.querySelector(".field__button").disabled = false;
-      } else {
-        console.log("true")
-        document.querySelector(".field__button").disabled = true;
-        return true;
-      }
+      const disabled = !input.value;
+      console.log(`${disabled}`);
+      document.querySelector(".field__button").disabled = disabled;
+      return disabled;
     })
   }
 
