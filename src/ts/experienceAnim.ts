@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
           order === cardOrder
             ? `cards__experience card__${cardOrder} active shadow--md`
             : order < cardOrder
-            ? `cards__experience card__${cardOrder} inactive-right shadow--md`
-            : `cards__experience card__${cardOrder} inactive-left shadow--md`;
+                ? `cards__experience card__${cardOrder} inactive-right shadow--md`
+                : `cards__experience card__${cardOrder} inactive-left shadow--md`;
       });
 
       document.querySelector('.content__cards')!.className = `content__cards event-${order}`;
