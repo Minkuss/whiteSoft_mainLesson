@@ -2,6 +2,24 @@
 @import "../../global-scss/paddings.scss";
 @import "../../global-scss/breakpoints.scss";
 
+@keyframes fadeIn {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+
 .header {
   padding-top: 16px !important;
   padding-bottom: 16px !important;
@@ -60,8 +78,8 @@
         background: $gray-default;
         z-index: 12;
         top: 0;
-        right: -100%;
-        transition: right 0.3s ease;
+        right: 0;
+        animation: fadeIn 0.5s ease-in-out;
         .burger__heading {
           display: flex;
           padding: 16px;
@@ -79,8 +97,9 @@
         }
       }
     }
-    .burger--active {
-      right: 0;
+    .burger--hidden {
+      animation: fadeOut 0.5s ease-in-out;
+      right: -100%;
     }
     .burger__overlay {
       width: 100%;

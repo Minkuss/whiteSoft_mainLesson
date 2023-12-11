@@ -2,11 +2,7 @@ import { FC, useState } from "react";
 import "./HeaderSection.scss";
 
 export const HeaderSection: FC = () => {
-  const [burgerOpen, setBurgerOpen] = useState(false);
-
-  const showBurger = () => {
-    useState(!burgerOpen);
-  };
+  const [burgerIsOpen, setBurgerIsOpen] = useState(false);
 
   return (
     <header className="header container">
@@ -32,20 +28,32 @@ export const HeaderSection: FC = () => {
           <div className="divider"></div>
         </div>
         <button
-          onClick={showBurger}
+          onClick={() => {
+            setBurgerIsOpen(!burgerIsOpen);
+          }}
           className="nav__burger"
           id="navBurger--open"
         >
           <img src="./assets/images/burger.svg" />
         </button>
-        <div className="nav__links--burger shadow--2xl">
+        <div
+          className={`nav__links--burger ${
+            burgerIsOpen ? "" : "burger--hidden"
+          } shadow--2xl`}
+        >
           <div className="burger__heading">
             <img
               className="nav__img"
               src="./assets/images/hero_logo.png"
               alt="Capibara.com"
             />
-            <button className="nav__burger" id="navBurger--close">
+            <button
+              onClick={() => {
+                setBurgerIsOpen(!burgerIsOpen);
+              }}
+              className="nav__burger"
+              id="navBurger--close"
+            >
               <img src="./assets/images/burger_close.svg" />
             </button>
           </div>
@@ -66,7 +74,9 @@ export const HeaderSection: FC = () => {
           </div>
           <div className="divider"></div>
         </div>
-        <div className="burger__overlay"></div>
+        <div
+          className={`burger__overlay ${burgerIsOpen ? "overlay--active" : ""}`}
+        ></div>
       </nav>
     </header>
   );
