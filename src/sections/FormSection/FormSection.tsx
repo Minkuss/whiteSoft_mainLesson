@@ -1,7 +1,43 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import "./FormSection.scss";
 
 export const FormSection: FC = () => {
+  const [isValid, setIsValid] = useState<fullInput>({
+    name_input: false,
+    phone_input: false,
+    subject_input: false,
+  });
+  const [isEmpty, setIsEmpty] = useState<fullInput>({
+    name_input: false,
+    phone_input: false,
+    subject_input: false,
+  });
+
+  const checkSubmitButton = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const input = event.currentTarget;
+    const inputValue = event.currentTarget.value;
+
+    inputValue
+      ? setIsValid((prevIsValid) => ({
+          ...prevIsValid,
+          [input.id + "_input"]: true,
+        }))
+      : setIsValid((prevIsValid) => ({
+          ...prevIsValid,
+          [input.id + "_input"]: false,
+        }));
+  };
+
+  const validation = (event: React.FocusEvent<HTMLInputElement, Element>) => {
+    const input = event.currentTarget;
+    const inputValue = event.currentTarget.value;
+
+    setIsEmpty((prevIsEmpty) => ({
+      ...prevIsEmpty,
+      [input.id + "_input"]: input.required && !inputValue,
+    }));
+  };
+
   return (
     <section id="contacts" className="contacts container">
       <div className="contacts__content">
@@ -13,34 +49,64 @@ export const FormSection: FC = () => {
         </div>
         <form className="content__form shadow--lg" action="">
           <div className="field-wrapper">
-            <label htmlFor="subject" className="field__label body-3--normal">
+            <label
+              htmlFor="subject"
+              className={`${
+                isEmpty.subject_input ? "field__label--error" : "field__label"
+              } body-3--normal`}
+            >
               Subject*
             </label>
             <input
-              className="field__input input body-1--normal"
+              className={`field__input input body-1--normal ${
+                isEmpty.subject_input ? "input--error" : ""
+              }`}
               id="subject"
               type="text"
+              required={true}
+              onChange={(event) => checkSubmitButton(event)}
+              onBlur={(event) => validation(event)}
             />
           </div>
           <div className="field-wrapper">
-            <label htmlFor="name" className="field__label body-3--normal">
+            <label
+              htmlFor="name"
+              className={`${
+                isEmpty.name_input ? "field__label--error" : "field__label"
+              } body-3--normal`}
+            >
               Name*
             </label>
             <input
-              className="field__input input body-1--normal"
+              className={`field__input input body-1--normal ${
+                isEmpty.name_input ? "input--error" : ""
+              }`}
               id="name"
               type="text"
+              required={true}
+              onChange={(event) => checkSubmitButton(event)}
+              onBlur={(event) => validation(event)}
             />
           </div>
           <div className="field-wrapper">
-            <label htmlFor="phone" className="field__label body-3--normal">
+            <label
+              htmlFor="phone"
+              className={`${
+                isEmpty.phone_input ? "field__label--error" : "field__label"
+              } body-3--normal`}
+            >
               Phone*
             </label>
             <input
-              className="field__input input body-1--normal"
+              className={`field__input input body-1--normal ${
+                isEmpty.phone_input ? "input--error" : ""
+              }`}
               id="phone"
               type="tel"
               placeholder="+7 ______-__-__"
+              required={true}
+              onChange={(event) => checkSubmitButton(event)}
+              onBlur={(event) => validation(event)}
             />
           </div>
           <div className="field-wrapper">
@@ -55,7 +121,15 @@ export const FormSection: FC = () => {
               id="description"
             ></textarea>
           </div>
-          <button type="submit" className="field__button button">
+          <button
+            disabled={
+              isValid.name_input && isValid.phone_input && isValid.subject_input
+                ? false
+                : true
+            }
+            type="submit"
+            className="field__button button"
+          >
             Send it!
           </button>
         </form>

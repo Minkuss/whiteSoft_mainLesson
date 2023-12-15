@@ -5,3 +5,9 @@ type worksData = {
   card__skills: string[],
   href: string
 }
+
+type fullInput = {
+  subject_input: boolean,
+  name_input: boolean,
+  phone_input: boolean,
+}
