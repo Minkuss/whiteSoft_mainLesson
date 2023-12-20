@@ -13,9 +13,11 @@ import {
 import "./global-scss/global.scss";
 import "./global-scss/fonts.scss";
 import "./global-scss/reset.scss";
+import { PopupComponent } from "./components";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
+    <PopupComponent />
     <HeaderSection />
     <HeroSection />
     <SkillsSection />

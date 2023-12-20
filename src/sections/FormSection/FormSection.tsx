@@ -12,6 +12,7 @@ export const FormSection: FC = () => {
     phone_input: false,
     subject_input: false,
   });
+  const [phoneValue, setPhoneValue] = useState("");
 
   const checkSubmitButton = (event: React.ChangeEvent<HTMLInputElement>) => {
     const input = event.currentTarget;
@@ -36,6 +37,40 @@ export const FormSection: FC = () => {
       ...prevIsEmpty,
       [input.id + "_input"]: input.required && !inputValue,
     }));
+  };
+
+  const applyPhoneMask = (event: React.ChangeEvent<HTMLInputElement>) => {
+    let phoneNumber = event.currentTarget.value;
+    phoneNumber = phoneNumber.replace(/\D/g, "");
+
+    if (phoneNumber.length === 0) {
+      phoneNumber = "+7(" + phoneNumber;
+    } else if (phoneNumber.length <= 4) {
+      phoneNumber = "+7(" + phoneNumber.substring(1);
+    } else if (phoneNumber.length <= 7) {
+      phoneNumber =
+        "+7(" + phoneNumber.substring(1, 4) + ") " + phoneNumber.substring(4);
+    } else if (phoneNumber.length <= 11) {
+      phoneNumber =
+        "+7(" +
+        phoneNumber.substring(1, 4) +
+        ") " +
+        phoneNumber.substring(4, 7) +
+        "-" +
+        phoneNumber.substring(7);
+    } else {
+      phoneNumber =
+        "+7(" +
+        phoneNumber.substring(1, 4) +
+        ") " +
+        phoneNumber.substring(4, 7) +
+        "-" +
+        phoneNumber.substring(7, 9) +
+        "-" +
+        phoneNumber.substring(9, 11);
+    }
+
+    setPhoneValue(phoneNumber);
   };
 
   return (
@@ -105,7 +140,11 @@ export const FormSection: FC = () => {
               type="tel"
               placeholder="+7 ______-__-__"
               required={true}
-              onChange={(event) => checkSubmitButton(event)}
+              onChange={(event) => {
+                checkSubmitButton(event);
+                applyPhoneMask(event);
+              }}
+              value={phoneValue}
               onBlur={(event) => validation(event)}
             />
           </div>
