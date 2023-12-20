@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import "./HeroSection.scss";
+export const HeroSection = () => {
+    return (_jsx("section", { id: "hero", className: "hero container", children: _jsxs("div", { className: "hero__info", children: [_jsxs("div", { className: "column__content", children: [_jsx("h1", { className: "content__h1 heading-1--bold", children: "Hi, I\u2019m Capybarara\u00A0\uD83D\uDC4B" }), _jsx("p", { className: "content__p body-2--normal", children: "Known for its adorable appearance and friendly nature, the Capybarara is now embarking on a journey to find a new job. Motivated by the desire to explore new opportunities and challenges, the Capybarara is determined to utilize its unique skills and traits to secure a fulfilling position!" })] }), _jsx("a", { href: "#getInTouch", className: "column__btn button subtitle--semi-bold", children: "I wanna employ you!!!!" }), _jsx("div", { className: "wrap", children: _jsx("img", { loading: "lazy", className: "info__img", src: "./assets/images/hero_img.png", alt: "Capybara" }) })] }) }));
+};

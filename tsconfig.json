@@ -4,8 +4,9 @@
     "module": "ESNEXT",
     "outDir": "./build",
     "rootDir": "./src",
-    "moduleResolution": "node",
+    "moduleResolution": "Bundler",
     "baseUrl": ".",
+    "jsx": "react-jsx",
     "esModuleInterop": true
   }
 }

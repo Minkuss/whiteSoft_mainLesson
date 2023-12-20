@@ -1,0 +1,128 @@
+@import "./breakpoints.scss";
+
+@font-face {
+  font-family: 'Inter';
+  src: url("../../assets/fonts/Inter/Inter-Regular.ttf");
+}
+
+#root {
+  font-family: "Inter";
+}
+
+.heading-1--bold {
+  font-weight: 700;
+}
+
+.heading-1--semi-bold {
+  font-weight: 600;
+}
+
+
+.heading-1, .heading-1--bold, .heading-1--semi-bold {
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -2%;
+  @media (max-width: $tablet) {
+    text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+  }
+}
+
+.heading-2--semi-bold {
+  font-weight: 600;
+}
+
+.heading-2, .heading-2--semi-bold {
+  font-size: 36px;
+  line-height: 40px;
+  letter-spacing: -2%;
+  @media (max-width: $tablet) {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -2%;
+  }
+}
+
+.heading-3--bold {
+  font-weight: 700;
+}
+
+.heading-3--semi-bold {
+  font-weight: 600;
+}
+
+.heading-3, .heading-3--bold, .heading-3--semi-bold {
+  font-size: 30px;
+  line-height: 36px;
+  letter-spacing: -2%;
+  @media (max-width: $tablet) {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -2%;
+  }
+}
+
+.subtitle--normal {
+  font-weight: 400;
+}
+
+.subtitle--semi-bold {
+  font-weight: 600;
+}
+
+.subtitle, .subtitle--normal, .subtitle--semi-bold {
+  font-size: 20px;
+  line-height: 28px;
+  @media (max-width: $tablet) {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+.body-1--normal {
+  font-weight: 400;
+}
+
+.body-1, .body-1--normal {
+  font-size: 18px;
+  line-height: 28px;
+  @media (max-width: $tablet) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.body-2--normal {
+  font-weight: 400;
+}
+
+.body-2--medium {
+  font-weight: 500;
+}
+
+.body-2--semi-bold {
+  font-weight: 600;
+}
+
+.body-2, .body-2--medium, .body-2--normal, .body-2--semi-bold {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.body-3--normal {
+  font-weight: 400;
+}
+
+.body-3--medium {
+  font-weight: 500;
+}
+
+.body-3, .body-3--medium, .body-3--normal {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.text__p {
+  text-align: center;
+}
