@@ -14,17 +14,22 @@ import "./global-scss/global.scss";
 import "./global-scss/fonts.scss";
 import "./global-scss/reset.scss";
 import { PopupComponent } from "./components";
+import { ApiContext } from "./context/apiContext";
+
+const api = "https://express-service-dun.vercel.app";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <PopupComponent />
-    <HeaderSection />
-    <HeroSection />
-    <SkillsSection />
-    <ExperienceSection />
-    <WorksSection />
-    <TestimonialsSection />
-    <FormSection />
-    <GetInTouchSection />
+    <ApiContext.Provider value={{ api: api }}>
+      <PopupComponent />
+      <HeaderSection />
+      <HeroSection />
+      <SkillsSection />
+      <ExperienceSection />
+      <WorksSection />
+      <TestimonialsSection />
+      <FormSection />
+      <GetInTouchSection />
+    </ApiContext.Provider>
   </React.StrictMode>
 );
